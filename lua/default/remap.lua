@@ -39,3 +39,31 @@ vim.keymap.set("n", "<leader><leader>", function()
     vim.cmd("so")
 end)
 
+-- Keybinding for deleting the current buffer using :bd
+vim.keymap.set("n", "<leader>bd", function()
+    vim.cmd("bd")
+end, {})
+
+-- Define a function to execute the appropriate program based on file type
+vim.keymap.set("n", "<leader>/", function()
+    local filetype = vim.bo.filetype
+    local app = ""
+    if filetype == "javascript" then
+        app = "node"
+    elseif filetype == "typescript" then
+        app = "ts-node"
+    elseif filetype == "lua" then
+        app = "lua"
+    elseif filetype == "python" then
+        app = "python"
+    elseif filetype == "rust" then
+        app = "cargo run"
+    elseif filetype == "go" then
+        app = "go run"
+    else
+        print("Unsupported file type: " .. filetype)
+        return
+    end
+    vim.cmd("terminal " .. app .. " %")
+end, { noremap = true, silent = true })
+
