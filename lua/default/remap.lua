@@ -44,6 +44,14 @@ vim.keymap.set("n", "<leader>bd", function()
     vim.cmd("bd")
 end, {})
 
+-- Keybding for cycling through the list of buffers
+vim.keymap.set("n", "<leader>bn", function()
+    vim.cmd("bn")
+end, {})
+vim.keymap.set("n", "<leader>bp", function()
+    vim.cmd("bp")
+end, {})
+
 -- Define a function to execute the appropriate program based on file type
 vim.keymap.set("n", "<leader>/", function()
     local filetype = vim.bo.filetype
