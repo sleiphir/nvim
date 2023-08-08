@@ -15,6 +15,7 @@ local function custom_git_files()
 end
 
 -- Keybindings
+vim.keymap.set('n', '<leader>pf', builtin.find_files, {})
 vim.keymap.set('n', '<C-p>', custom_git_files, {}) -- Use the custom function here
 vim.keymap.set('n', '<leader>ps', function()
     builtin.grep_string({ search = vim.fn.input("Grep > ") })
