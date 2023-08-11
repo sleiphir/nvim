@@ -27,3 +27,5 @@ vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
 
+-- bujo window width
+vim.api.nvim_set_var('bujo#window_width', 60)
