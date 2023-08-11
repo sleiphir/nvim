@@ -1,4 +1,16 @@
 local lsp = require("lsp-zero")
+local lspconfig = require('lspconfig')
+local home = vim.fn.expand('$HOME')
+
+-- Activate intelephense
+lspconfig.intelephense.setup {
+  cmd = { "intelephense", "--stdio" },
+  settings = {
+    intelephense = {
+      licenceKeyPath = home..'/intelephense/license.txt'
+    }
+  }
+}
 
 lsp.preset("recommended")
 
