@@ -7,6 +7,8 @@ return require("packer").startup(function(use)
     -- Packer can manage itself
     use "wbthomason/packer.nvim"
 
+    use "wsdjeg/vim-fetch"
+
     use {
         "nvim-telescope/telescope.nvim", tag = "0.1.0",
         requires = { {"nvim-lua/plenary.nvim"} }
