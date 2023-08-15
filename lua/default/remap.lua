@@ -52,20 +52,6 @@ vim.keymap.set("n", "<leader>bp", function()
     vim.cmd("bp")
 end, {})
 
--- vim-bujo keybindings
-local function toggleTodo()
-    local line = vim.fn.getline(".")
-    if vim.fn.match(line, "- \\[ \\]") ~= -1 then
-        vim.fn.setline(".", vim.fn.substitute(line, "- \\[ \\]", "- [x]", ""))
-    else
-        vim.fn.setline(".", vim.fn.substitute(line, "- \\[x\\]", "- [ ]", ""))
-    end
-end
-vim.keymap.set("n", "<C-A>", "i- [ ] ")
-vim.keymap.set("i", "<C-A>", "- [ ] ")
-vim.keymap.set("n", "<C-Q>", function() toggleTodo() end)
-vim.keymap.set("i", "<C-Q>", function() toggleTodo() end)
-
 -- Define a function to execute the appropriate program based on file type
 vim.keymap.set("n", "<leader>/", function()
     local filetype = vim.bo.filetype
