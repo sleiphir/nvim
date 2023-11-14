@@ -2,7 +2,7 @@ require("neoai").setup({
     models = {
         {
             name = "openai",
-            model = "gpt-4",
+            model = "gpt-4-1106-preview",
             params = nil,
         },
     },
