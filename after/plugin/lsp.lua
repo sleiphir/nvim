@@ -4,12 +4,12 @@ local home = vim.fn.expand('$HOME')
 
 -- Activate intelephense
 lspconfig.intelephense.setup {
-  cmd = { "intelephense", "--stdio" },
-  settings = {
-    intelephense = {
-      licenceKeyPath = home..'/intelephense/license.txt'
+    cmd = { "intelephense", "--stdio" },
+    settings = {
+        intelephense = {
+            licenceKeyPath = home .. '/intelephense/license.txt'
+        }
     }
-  }
 }
 
 lsp.preset("recommended")
@@ -24,7 +24,7 @@ lsp.nvim_workspace()
 
 
 local cmp = require('cmp')
-local cmp_select = {behavior = cmp.SelectBehavior.Select}
+local cmp_select = { behavior = cmp.SelectBehavior.Select }
 local cmp_mappings = lsp.defaults.cmp_mappings({
     ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
     ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
@@ -50,7 +50,21 @@ lsp.set_preferences({
 })
 
 lsp.on_attach(function(client, bufnr)
-    local opts = {buffer = bufnr, remap = false}
+    local opts = { buffer = bufnr, remap = false }
+
+    -- Format on save
+    -- vim.api.nvim_create_autocmd("BufWritePost", {
+    --     callback = function()
+    --         vim.lsp.buf.format()
+    --     end
+    -- })
+
+    -- Eslint auto fix on save
+    vim.api.nvim_create_autocmd('BufWritePre', {
+        pattern = { '*.tsx', '*.ts', '*.jsx', '*.js', '*.vue', '*.cjs', '*.mjs', '*.json', '*.css', '*.scss', '*.less', '*.yml' },
+        command = 'silent! EslintFixAll',
+        group = vim.api.nvim_create_augroup('EslintAutocmdsFormatting', {}),
+    })
 
     vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
     vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
@@ -62,6 +76,8 @@ lsp.on_attach(function(client, bufnr)
     vim.keymap.set("n", "<leader>rr", function() vim.lsp.buf.references() end, opts)
     vim.keymap.set("n", "<leader>rn", function() vim.lsp.buf.rename() end, opts)
     vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
+    vim.keymap.set("n", "<leader>ls", function() vim.lsp.buf.signature_help() end, opts)
+    vim.keymap.set("n", "<leader>D", function() vim.lsp.buf.type_definition() end, opts)
 end)
 
 lsp.setup()
@@ -69,4 +85,3 @@ lsp.setup()
 vim.diagnostic.config({
     virtual_text = true
 })
-

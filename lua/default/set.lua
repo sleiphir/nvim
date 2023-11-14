@@ -1,3 +1,7 @@
+-- disable netrw
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
@@ -26,7 +30,3 @@ vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
-
--- vim-bujo settings
-vim.api.nvim_set_var('bujo#todo_file_path', os.getenv('HOME') .. '/.bujo')
-vim.api.nvim_set_var('bujo#window_width', 60)
