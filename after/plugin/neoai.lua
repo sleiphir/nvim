@@ -45,6 +45,23 @@ require("neoai").setup({
                     [optional body]
 
                     [optional footer(s)]
+                    Here are some examples of commit messages:
+                    =========================================
+                    feat: holiday-themed devcard
+
+                    Our DevCard now features a holiday theme for both Halloween and Christmas!
+                    This also includes a link pointing to Chris' article on how to embed it on your GitHub Profile.
+
+                    DD-267 #done
+                    =========================================
+                    build(extension): version 3.8.0
+                    =========================================
+                    chore!: drop Node 6 from testing matrix
+
+                    BREAKING CHANGE: dropping Node 6 which hits end of life in April
+                    =========================================
+                    ci: use pulumi common new kubernetes helpers
+                    =========================================
                     Using the following git diff generate a consise and
                     clear git commit message, with a short title summary
                     that is 75 characters or less.
