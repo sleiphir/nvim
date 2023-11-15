@@ -25,3 +25,4 @@ vim.keymap.set('n', '<leader>fa', function() builtin.find_files({ follow = true,
 vim.keymap.set('n', '<leader>fb', function() builtin.buffers() end)
 vim.keymap.set('n', '<leader>fc', function() builtin.git_commits() end)
 vim.keymap.set('n', '<leader>gt', function() builtin.git_status() end)
+vim.keymap.set('n', '<leader>gg', function() builtin.colorscheme({ enable_preview = true }) end)

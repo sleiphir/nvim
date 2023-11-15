@@ -24,10 +24,14 @@ return require("packer").startup(function(use)
     use("ThePrimeagen/refactoring.nvim")
 
     -- theme stuff
-    use {
-        'nvim-lualine/lualine.nvim',
-        requires = { 'nvim-tree/nvim-web-devicons', opt = true }
-    }
+    -- use {
+    --     'nvim-lualine/lualine.nvim',
+    --     requires = {
+    --         'nvim-tree/nvim-web-devicons',
+    --         'RRethy/nvim-base16',
+    --     }
+    -- }
+    -- use("RRethy/nvim-base16")
     use("rebelot/kanagawa.nvim")
     use("felipeagc/fleet-theme-nvim")
     use("lukas-reineke/indent-blankline.nvim")
