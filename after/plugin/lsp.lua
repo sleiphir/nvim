@@ -2,7 +2,7 @@ local lsp = require("lsp-zero")
 local lspconfig = require('lspconfig')
 local home = vim.fn.expand('$HOME')
 
--- Activate intelephense
+-- Activate intelephense because I paid for it, yes
 lspconfig.intelephense.setup {
     cmd = { "intelephense", "--stdio" },
     settings = {
