@@ -2,7 +2,7 @@ require('neoai').setup({
     models = {
         {
             name = "openai",
-            model = "gpt-4-1106-preview",
+            model = "gpt-3.5-turbo-1106", -- "gpt-4-1106-preview",
             params = nil,
         },
     },
@@ -17,12 +17,7 @@ require('neoai').setup({
     },
     prompts = {
         context_prompt = function(context)
-            return "You are a senior software developer."
-                .. "You always answer question with short, straight to the point answers."
-                .. "You only provide the code snippet and without the code block."
-                .. "Only provide explaination if the user asks for it"
-                .. "Here is the user's problem:"
-                .. context
+            return context
         end,
     },
     shortcuts = {
@@ -72,7 +67,7 @@ require('neoai').setup({
                     =========================================
                     Using the following git diff in order to generate
                     a consise and clear git commit message:
-                    ]] .. vim.fn.system("git diff --cached")
+                    ]] .. vim.fn.system("git diff --cached --ignore-space-at-eol")
             end,
             modes = { "n" },
             strip_function = nil,
