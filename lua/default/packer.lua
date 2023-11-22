@@ -18,7 +18,6 @@ return require("packer").startup(function(use)
 
     -- easy mode
     use("stevearc/conform.nvim")
-    use { 'stevearc/dressing.nvim' }
     use("rafamadriz/friendly-snippets")
     use({ 'echasnovski/mini.nvim', branch = 'stable' })
     use("ThePrimeagen/refactoring.nvim")

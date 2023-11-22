@@ -1,7 +1,7 @@
 require "ibl".setup {
     scope = {
         enabled = true,
-        highlight = { "Ignore", "Label" },
+        highlight = "Label",
         show_start = false,
         show_end = false,
         include = {
@@ -10,12 +10,8 @@ require "ibl".setup {
             },
         },
     },
-    whitespace = {
-        highlight = "Ignore",
-    },
     indent = {
         char = "▏",
-        highlight = { "Ignore", "Comment" },
     },
     exclude = {
         buftypes = { "terminal", "nofile" },
