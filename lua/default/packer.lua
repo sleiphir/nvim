@@ -32,6 +32,7 @@ return require("packer").startup(function(use)
     --     }
     -- }
     -- use("RRethy/nvim-base16")
+    use("markvincze/panda-vim")
     use("rebelot/kanagawa.nvim")
     use("felipeagc/fleet-theme-nvim")
     use("lukas-reineke/indent-blankline.nvim")

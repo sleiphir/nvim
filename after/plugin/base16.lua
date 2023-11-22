@@ -5,7 +5,8 @@
 --     base08 = '#d6d6dd', base09 = '#e5c995', base0A = '#70cdb7', base0B = '#d898d8',
 --     base0C = '#d898d8', base0D = '#e5c995', base0E = '#70cdb7', base0F = '#d6d6dd',
 -- })
---
+
+-- require('base16-colorscheme').setup()
 -- require('base16-colorscheme').with_config({
 --     telescope = true,
 --     indentblankline = true,
