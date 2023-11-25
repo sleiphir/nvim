@@ -1,7 +1,10 @@
 require("nvim-tree").setup({
     sort_by = "case_sensitive",
     view = { width = 40, },
-    filters = { dotfiles = true, },
+    filters = {
+        git_ignored = false,
+        dotfiles = false,
+    },
     actions = {
         open_file = {
             quit_on_open = true,
