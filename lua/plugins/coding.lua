@@ -61,7 +61,6 @@ return {
             require("Comment").setup()
         end
     },
-    { "L3MON4D3/LuaSnip", event = "InsertEnter", },
     -- Surround
     { 'tpope/vim-surround', event = "BufRead", },
 }

@@ -19,7 +19,7 @@ lsp_zero.set_sign_icons({
 })
 
 vim.diagnostic.config({
-  virtual_text = false,
+  virtual_text = true,
   severity_sort = true,
   float = {
     style = 'minimal',
@@ -66,8 +66,4 @@ require('mason-lspconfig').setup({
         'rust_analyzer',
         'zls',
     },
-})
-
-vim.diagnostic.config({
-    virtual_text = true
 })
