@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/sleiphir/nvim/compare/v1.0.0...v1.0.1) (2023-11-27)
+
+
+### Bug Fixes
+
+* **fugitive:** allow fugitive to load when no files are opened ([b969172](https://github.com/sleiphir/nvim/commit/b969172234b77b06bc35c8f3ceb0319ad07ac4ca))
+
 ## 1.0.0 (2023-11-26)
 
 
