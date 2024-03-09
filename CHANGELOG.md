@@ -1,5 +1,16 @@
 # Changelog
 
+## [2.0.0](https://github.com/sleiphir/nvim/compare/v1.0.2...v2.0.0) (2024-03-09)
+
+
+### ⚠ BREAKING CHANGES
+
+* **plugins:** remove LuaSnip
+
+### Miscellaneous Chores
+
+* **plugins:** Update dependencies, ([6223a65](https://github.com/sleiphir/nvim/commit/6223a651a10e732f22c26a3da3c3d48d2001451f))
+
 ## [1.0.2](https://github.com/sleiphir/nvim/compare/v1.0.1...v1.0.2) (2023-11-30)
 
 
