@@ -12,10 +12,6 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup({
-    { import = "plugins" },
-}, {
-    install = {
-        colorscheme = { "fleet" },
-    },
-})
+require("lazy").setup({{ import = "plugins" }})
+
+vim.cmd([[colorscheme peel-enhanced]])
