@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.1.0](https://github.com/sleiphir/nvim/compare/v1.0.2...v1.1.0) (2024-04-19)
+
+
+### Features
+
+* add custom theme 'peel-enhanced' ([3fd3e0b](https://github.com/sleiphir/nvim/commit/3fd3e0b6bfa7e9bb9d0ce9fa2f35d25ffe0e10a6))
+* **plugin:** add folke/trouble plugin ([98e3528](https://github.com/sleiphir/nvim/commit/98e35282d410dbe42365b5927d841fe23a274b0b))
+* remove fleet theme config file ([87b5717](https://github.com/sleiphir/nvim/commit/87b571752a2f99e4951edd8b2c146ad5ddb41f81))
+
 ## [1.0.2](https://github.com/sleiphir/nvim/compare/v1.0.1...v1.0.2) (2023-11-30)
 
 
