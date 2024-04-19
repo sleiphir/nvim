@@ -24,6 +24,5 @@ vim.opt.sidescrolloff = 16
 
 vim.opt.updatetime = 100
 
-vim.g.netrw_browse_split = 0
-vim.g.netrw_banner = 0
-vim.g.netrw_winsize = 25
+vim.opt.list = false
+vim.opt.listchars = "tab:» ,extends:›,precedes:‹,nbsp:·,trail:·"
