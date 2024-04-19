@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://github.com/sleiphir/nvim/compare/v1.1.0...v1.2.0) (2024-04-19)
+
+
+### Features
+
+* **autocmds:** add lsp auto format on save ([cbe86de](https://github.com/sleiphir/nvim/commit/cbe86ded28b899087a6d3b1891d3d8d755d6c614))
+
 ## [1.1.0](https://github.com/sleiphir/nvim/compare/v1.0.2...v1.1.0) (2024-04-19)
 
 
