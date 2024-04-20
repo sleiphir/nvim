@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.3.0](https://github.com/sleiphir/nvim/compare/v1.2.0...v1.3.0) (2024-04-20)
+
+
+### Features
+
+* remove guicursor option ([c1fc0ca](https://github.com/sleiphir/nvim/commit/c1fc0cad117cf6710e90201bcd117ad2717b28ec))
+* remove unused bindings ([105d6cf](https://github.com/sleiphir/nvim/commit/105d6cf2eab4cf8e7f736dab6054113f290b2d36))
+
 ## [1.2.0](https://github.com/sleiphir/nvim/compare/v1.1.0...v1.2.0) (2024-04-19)
 
 
