@@ -19,6 +19,8 @@ vim.opt.incsearch = true
 
 vim.opt.termguicolors = true
 
+vim.opt.guicursor = "n-v-i-c-ci-ve-sm:block,r-cr-o:hor20"
+
 vim.opt.scrolloff = 8
 vim.opt.sidescrolloff = 16
 
