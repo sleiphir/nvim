@@ -50,7 +50,7 @@ return {
 		end,
 	},
 	-- Copilot
-	{ "github/copilot.vim" },
+	-- { "github/copilot.vim" },
 	-- Comment
 	{
 		"numToStr/Comment.nvim",

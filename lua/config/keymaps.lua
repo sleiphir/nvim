@@ -1,6 +1,6 @@
 vim.g.mapleader = " "
 
-vim.keymap.set("n", "<leader>e", "<cmd>:Ex<CR>")
+vim.keymap.set("n", "<leader>e", "<cmd>:Oil<CR>")
 vim.keymap.set("i", "<C-c>", "<Esc>")
 
 -- Keep things centered
