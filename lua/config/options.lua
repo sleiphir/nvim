@@ -25,4 +25,4 @@ vim.opt.sidescrolloff = 16
 vim.opt.updatetime = 100
 
 vim.opt.list = true
-vim.opt.listchars = "tab:  ,extends:›,precedes:‹,nbsp:·,trail:·"
+vim.opt.listchars = "tab:» ,extends:›,precedes:‹,nbsp:·,trail:·"
