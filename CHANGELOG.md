@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.4.0](https://github.com/sleiphir/nvim/compare/v1.3.0...v1.4.0) (2024-05-05)
+
+
+### Features
+
+* add oil to replace netrw ([7e318ed](https://github.com/sleiphir/nvim/commit/7e318ed9166d2f5a76149ec6785d93ee63395ea2))
+* disable copilot for now ([7e318ed](https://github.com/sleiphir/nvim/commit/7e318ed9166d2f5a76149ec6785d93ee63395ea2))
+
 ## [1.3.0](https://github.com/sleiphir/nvim/compare/v1.2.0...v1.3.0) (2024-04-20)
 
 
