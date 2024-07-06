@@ -1,4 +1,18 @@
 return {
+	{
+		"L3MON4D3/LuaSnip",
+		version = "2.*",
+		build = "make install_jsregexp",
+		dependencies = {
+			'nvim-treesitter/nvim-treesitter',
+		},
+		init = function()
+			local ls = require('luasnip')
+			ls.setup({
+				enable_autosnippets = true,
+			})
+		end
+	},
 	-- Autocomplete
 	{
 		"hrsh7th/nvim-cmp",
@@ -38,6 +52,7 @@ return {
 				sources = cmp.config.sources({
 					{ name = "nvim_lsp" },
 					{ name = "path" },
+					{ name = "luasnip" },
 				}, {
 					{ name = "buffer" },
 				}),
