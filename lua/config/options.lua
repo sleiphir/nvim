@@ -26,3 +26,5 @@ vim.opt.updatetime = 100
 
 vim.opt.list = true
 vim.opt.listchars = "tab:» ,extends:›,precedes:‹,nbsp:·,trail:·"
+
+vim.g.python3_host_prog = "/usr/bin/python3"
