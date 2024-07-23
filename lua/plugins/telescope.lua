@@ -17,8 +17,15 @@ return {
 	keys = {
 		{ "<C-p>",      "<cmd>Telescope find_files<CR>", desc = "Find files" },
 		{ "<leader>ps", "<cmd>Telescope live_grep<CR>",  desc = "Live Grep" },
+		-- Search almost everything (except .git folder)
 		{
 			"<leader>fa",
+			function() require("telescope.builtin").find_files({ follow = true, no_ignore = true, hidden = true, file_ignore_patterns = { '.git' } }) end,
+			desc = "Find all files"
+		},
+		-- Search everything
+		{
+			"<leader>fl",
 			function() require("telescope.builtin").find_files({ follow = true, no_ignore = true, hidden = true }) end,
 			desc = "Find all files"
 		},
