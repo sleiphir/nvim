@@ -46,7 +46,7 @@ hi Folded           guifg=#e2dfd7 guibg=NONE gui=NONE
 hi Normal           guifg=#d6e1c7 guibg=NONE gui=NONE
 hi Boolean          guifg=#f7b83d guibg=NONE gui=italic
 hi Character        guifg=#f4d370 guibg=NONE gui=NONE
-hi Comment          guifg=#585146 guibg=NONE gui=italic
+hi Comment          guifg=#585146 guibg=NONE gui=NONE
 hi Conditional      guifg=#94c7b6 guibg=NONE gui=NONE
 hi Constant         guifg=NONE guibg=NONE gui=NONE
 hi Define           guifg=#94c7b6 guibg=NONE gui=NONE
