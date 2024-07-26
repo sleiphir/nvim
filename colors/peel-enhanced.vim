@@ -27,7 +27,7 @@ let g:colors_name = "peel-contrast"
 "########################################
 
 hi Cursor           guifg=#0c0b0a guibg=#f8f8f0 gui=NONE
-hi Visual           guifg=#ffffff guibg=#d3643b gui=NONE
+hi Visual           guifg=#ffffff guibg=#4f5258 gui=NONE
 hi CursorLine       guifg=NONE guibg=#141311 gui=NONE
 hi CursorLineNr     guifg=#5f5750 guibg=NONE gui=NONE
 hi CursorColumn     guifg=NONE guibg=NONE gui=NONE
