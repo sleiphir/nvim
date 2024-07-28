@@ -14,9 +14,21 @@ return {
 			case_mode = "smart_case", -- or "ignore_case" or "respect_case"
 		}
 	},
+	config = function()
+		local actions = require("telescope.actions")
+		require("telescope").setup {
+			defaults = {
+				mappings = {
+					i = {
+						["<esc>"] = actions.close
+					},
+				},
+			}
+		}
+	end,
 	keys = {
-		{ "<C-p>",      "<cmd>Telescope find_files<CR>", desc = "Find files" },
-		{ "<leader>ps", "<cmd>Telescope live_grep<CR>",  desc = "Live Grep" },
+		{ "<C-p>",     "<cmd>Telescope find_files<CR>", desc = "Find files" },
+		{ "<leader>p", "<cmd>Telescope live_grep<CR>",  desc = "Live Grep" },
 		-- Search almost everything (except .git folder)
 		{
 			"<leader>fa",
