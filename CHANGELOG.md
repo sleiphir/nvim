@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.0](https://github.com/sleiphir/nvim/compare/v1.4.0...v1.5.0) (2024-07-28)
+
+
+### Features
+
+* **telescope:** change &lt;leader&gt;fa to ignore .git folder ([77272a7](https://github.com/sleiphir/nvim/commit/77272a70d3fb1ab439585e68d58c55c80baebf1f))
+
 ## [1.4.0](https://github.com/sleiphir/nvim/compare/v1.3.0...v1.4.0) (2024-07-06)
 
 
