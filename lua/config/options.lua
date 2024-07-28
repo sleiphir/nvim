@@ -28,3 +28,6 @@ vim.opt.list = true
 vim.opt.listchars = "tab:» ,extends:›,precedes:‹,nbsp:·,trail:·"
 
 vim.g.python3_host_prog = "/usr/bin/python3"
+
+-- Always use system clipboard (I might regret this)
+vim.opt.clipboard = "unnamedplus"
