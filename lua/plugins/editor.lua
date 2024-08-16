@@ -1,13 +1,5 @@
 return {
 	{
-		"folke/which-key.nvim",
-		event = "VeryLazy",
-		opts = {},
-		keys = {
-			{ '<leader>wk', '<cmd>WhichKey<CR>', desc = 'Show key mappings' },
-		},
-	},
-	{
 		"folke/trouble.nvim",
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 		opts = {},
