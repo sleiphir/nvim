@@ -24,3 +24,11 @@ vim.keymap.set({ "n", "v" }, "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<C
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+
+-- Open a new terminal pane
+vim.keymap.set("n", "<leader>t", "<cmd>botright terminal<CR>")
+-- Focus the terminal pane
+vim.keymap.set("n", "<leader>f", function()
+	local bufnr = vim.fn.bufnr("#")
+	vim.api.nvim_set_current_buf(bufnr)
+end)
