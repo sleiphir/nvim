@@ -64,7 +64,14 @@ return {
 			require("cmp").setup(opts)
 		end,
 	},
-	-- Copilot
+	-- Supermaven (copilot)
+	{
+		"supermaven-inc/supermaven-nvim",
+		config = function()
+			require("supermaven-nvim").setup({})
+		end,
+	},
+	-- GitHub Copilot
 	-- { "github/copilot.vim" },
 	-- Comment
 	{
@@ -79,4 +86,6 @@ return {
 	},
 	-- Surround
 	{ "tpope/vim-surround", event = "BufRead", },
+	-- Unimpaired
+	{ "tpope/vim-unimpaired", event = "BufRead", },
 }
