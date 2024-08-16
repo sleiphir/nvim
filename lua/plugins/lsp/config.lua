@@ -52,6 +52,7 @@ lsp_zero.on_attach(function(_, bufnr)
 	vim.keymap.set("n", "<leader>rr", function() vim.lsp.buf.references() end, opts)
 	vim.keymap.set("n", "<leader>rn", function() vim.lsp.buf.rename() end, opts)
 	vim.keymap.set("n", "<leader>D", function() vim.lsp.buf.type_definition() end, opts)
+	vim.keymap.set("n", "<leader><leader>", function() vim.lsp.buf.format() end, opts)
 end)
 
 require("mason-lspconfig").setup({
