@@ -27,8 +27,12 @@ return {
 		}
 	end,
 	keys = {
-		{ "<C-p>",     "<cmd>Telescope find_files<CR>", desc = "Find files" },
-		{ "<leader>p", "<cmd>Telescope live_grep<CR>",  desc = "Live Grep" },
+		{ "<C-p>", "<cmd>Telescope find_files<CR>",  desc = "Find files" },
+		{
+			"<leader>p",
+			function() require("telescope.builtin").live_grep({ no_ignore = true }) end,
+			desc = "Live Grep"
+		},
 		-- Search almost everything (except .git folder)
 		{
 			"<leader>fa",
