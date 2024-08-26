@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.0](https://github.com/sleiphir/nvim/compare/v1.5.0...v1.6.0) (2024-08-26)
+
+
+### Features
+
+* **coding:** add supermaven autocompletion ([754eef1](https://github.com/sleiphir/nvim/commit/754eef18b9ea88b3b50fee47c41c5375ef272403))
+
 ## [1.5.0](https://github.com/sleiphir/nvim/compare/v1.4.0...v1.5.0) (2024-07-28)
 
 
