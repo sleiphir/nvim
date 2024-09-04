@@ -46,6 +46,7 @@ lsp_zero.on_attach(function(_, bufnr)
 
 	vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
 	vim.keymap.set("n", "gi", function() vim.lsp.buf.implementation() end, opts)
+	vim.keymap.set("n", "gt", function() vim.lsp.buf.type_definition() end, opts)
 	vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
 	vim.keymap.set("n", "[d", function() vim.diagnostic.goto_next() end, opts)
 	vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end, opts)
