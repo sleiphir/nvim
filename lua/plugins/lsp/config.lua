@@ -1,6 +1,8 @@
 local lsp_zero = require("lsp-zero")
 local lspconfig = require("lspconfig")
 
+lspconfig.gleam.setup({})
+
 lspconfig.lua_ls.setup({
 	settings = {
 		Lua = {
