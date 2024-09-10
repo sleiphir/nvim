@@ -21,4 +21,21 @@ return {
 			{ "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>", desc = "Make it rain" },
 		},
 	},
+	{
+		"lukas-reineke/indent-blankline.nvim",
+		main = "ibl",
+		opts = {},
+		config = function()
+			require("ibl").setup {
+				indent = {
+					char = "▏",
+				},
+				scope = {
+					enabled = true,
+					show_start = false,
+					show_end = false,
+				},
+			}
+		end,
+	},
 }
