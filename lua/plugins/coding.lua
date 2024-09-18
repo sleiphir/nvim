@@ -64,6 +64,15 @@ return {
 			require("cmp").setup(opts)
 		end,
 	},
+	{
+		"ray-x/lsp_signature.nvim",
+		event = "VeryLazy",
+		opts = {},
+		config = function(_, opts) require 'lsp_signature'.setup(opts) end,
+		keys = {
+			{ "<C-k>", function() vim.lsp.buf.signature_help() end, desc = "Toggle Signature Help" },
+		},
+	},
 	-- Supermaven (copilot)
 	{
 		"supermaven-inc/supermaven-nvim",
@@ -85,7 +94,7 @@ return {
 		end
 	},
 	-- Surround
-	{ "tpope/vim-surround", event = "BufRead", },
+	{ "tpope/vim-surround",   event = "BufRead", },
 	-- Unimpaired
 	{ "tpope/vim-unimpaired", event = "BufRead", },
 }

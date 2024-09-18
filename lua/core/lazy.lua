@@ -14,4 +14,4 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({ { import = "plugins" } })
 
-vim.cmd([[colorscheme peel-enhanced]])
+vim.cmd([[colorscheme mellow]])

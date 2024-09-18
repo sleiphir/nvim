@@ -40,7 +40,7 @@ hi StatusLineNC     guifg=#edebe6 guibg=NONE gui=NONE
 hi Pmenu            guifg=#edebe6 guibg=NONE gui=NONE
 hi PmenuSel         guifg=NONE guibg=#94c7b6 gui=NONE
 hi IncSearch        guifg=#0c0b0a guibg=#f4d370 gui=NONE
-hi Search           guifg=NONE guibg=NONE gui=NONE
+hi Search           guifg=NONE guibg=#404040 gui=NONE
 hi Directory        guifg=#94c7b6 guibg=NONE gui=NONE
 hi Folded           guifg=#e2dfd7 guibg=NONE gui=NONE
 hi Normal           guifg=#d6e1c7 guibg=NONE gui=NONE
