@@ -39,4 +39,10 @@ return {
 		end,
 	},
 	{ "mellow-theme/mellow.nvim" },
+	{
+		'norcalli/nvim-colorizer.lua',
+		config = function()
+			require('colorizer').setup()
+		end
+	},
 }
