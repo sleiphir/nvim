@@ -69,9 +69,6 @@ return {
 		event = "VeryLazy",
 		opts = {},
 		config = function(_, opts) require 'lsp_signature'.setup(opts) end,
-		keys = {
-			{ "<C-k>", function() vim.lsp.buf.signature_help() end, desc = "Toggle Signature Help" },
-		},
 	},
 	-- Supermaven (copilot)
 	{
