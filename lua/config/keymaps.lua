@@ -25,6 +25,13 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
+-- Move between windows with actual arrow keys
+vim.keymap.set("n", "<Left>", "<C-w>h")
+vim.keymap.set("n", "<Down>", "<C-w>j")
+vim.keymap.set("n", "<Up>", "<C-w>k")
+vim.keymap.set("n", "<Right>", "<C-w>l")
+
+
 -- Open a new terminal pane
 vim.keymap.set("n", "<leader>t", "<cmd>botright terminal<CR>")
 -- Focus the terminal pane
