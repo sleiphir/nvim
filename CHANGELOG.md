@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.6.0](https://github.com/sleiphir/nvim/compare/v1.5.0...v1.6.0) (2024-09-30)
+
+
+### Features
+
+* add &lt;leader&gt;d to duplicate line ([b474945](https://github.com/sleiphir/nvim/commit/b47494563df56123609db1071d40b7db250846f3))
+* add colorizer plugin for hex codes ([fceb4c3](https://github.com/sleiphir/nvim/commit/fceb4c35c6ed8f142fca9a8afc2771a8330e8160))
+* add indent-blankline ([f556257](https://github.com/sleiphir/nvim/commit/f556257710b5f093a470c28da696a92309162695))
+* **coding:** add supermaven autocompletion ([754eef1](https://github.com/sleiphir/nvim/commit/754eef18b9ea88b3b50fee47c41c5375ef272403))
+
 ## [1.5.0](https://github.com/sleiphir/nvim/compare/v1.4.0...v1.5.0) (2024-07-28)
 
 
