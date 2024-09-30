@@ -31,6 +31,8 @@ vim.keymap.set("n", "<Down>", "<C-w>j")
 vim.keymap.set("n", "<Up>", "<C-w>k")
 vim.keymap.set("n", "<Right>", "<C-w>l")
 
+-- Duplicate line
+vim.keymap.set("n", "<leader>d", "mzyyp`zj")
 
 -- Open a new terminal pane
 vim.keymap.set("n", "<leader>t", "<cmd>botright terminal<CR>")
