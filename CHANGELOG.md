@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.7.0](https://github.com/sleiphir/nvim/compare/v1.6.0...v1.7.0) (2024-10-18)
+
+
+### Features
+
+* **lsp:** add golang autocmd on save ([8c2f01f](https://github.com/sleiphir/nvim/commit/8c2f01f9da92b4be79b38977fb1f2f71888cacac))
+
 ## [1.6.0](https://github.com/sleiphir/nvim/compare/v1.5.0...v1.6.0) (2024-09-30)
 
 
