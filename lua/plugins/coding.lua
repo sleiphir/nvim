@@ -71,12 +71,12 @@ return {
 		config = function(_, opts) require 'lsp_signature'.setup(opts) end,
 	},
 	-- Supermaven (copilot)
-	{
-		"supermaven-inc/supermaven-nvim",
-		config = function()
-			require("supermaven-nvim").setup({})
-		end,
-	},
+	-- {
+	-- 	"supermaven-inc/supermaven-nvim",
+	-- 	config = function()
+	-- 		require("supermaven-nvim").setup({})
+	-- 	end,
+	-- },
 	-- GitHub Copilot
 	-- { "github/copilot.vim" },
 	-- Comment
