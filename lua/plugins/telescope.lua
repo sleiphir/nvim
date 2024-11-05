@@ -27,7 +27,7 @@ return {
 		}
 	end,
 	keys = {
-		{ "<C-p>", "<cmd>Telescope find_files<CR>",  desc = "Find files" },
+		{ "<C-p>", "<cmd>Telescope git_files<CR>",  desc = "Find files" },
 		{
 			"<leader>p",
 			function() require("telescope.builtin").live_grep({ no_ignore = true }) end,
