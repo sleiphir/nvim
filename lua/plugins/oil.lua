@@ -6,7 +6,6 @@ return {
 			CustomOilBar = function()
 				local path = vim.fn.expand "%"
 				path = path:gsub("oil://", "")
-
 				return "  " .. vim.fn.fnamemodify(path, ":.")
 			end
 
@@ -27,7 +26,7 @@ return {
 					["g."] = "actions.toggle_hidden",
 				},
 				win_options = {
-					winbar = "%{v:lua.CustomOilBar()}",
+					statusline = "%{v:lua.CustomOilBar()}",
 				},
 			}
 
