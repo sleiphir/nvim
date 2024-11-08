@@ -1,33 +1,43 @@
-vim.opt.number = true
-vim.opt.relativenumber = true
+local opt = vim.opt
 
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.expandtab = false
-vim.opt.smartindent = true
-vim.opt.cursorline = true
+opt.number = true
+opt.relativenumber = true
 
-vim.opt.wrap = false
+opt.tabstop = 4
+opt.softtabstop = 4
+opt.shiftwidth = 4
+opt.expandtab = false
+opt.smartindent = true
+opt.cursorline = true
 
-vim.opt.swapfile = false
-vim.opt.backup = false
-vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
-vim.opt.undofile = true
+opt.wrap = true
+opt.linebreak = true
+opt.breakindent = true
+opt.showbreak = "> "
 
-vim.opt.hlsearch = false
-vim.opt.incsearch = true
+opt.inccommand = "split"
 
-vim.opt.termguicolors = true
+opt.incsearch = true
+opt.smartcase = true
+opt.ignorecase = true
 
-vim.opt.scrolloff = 8
-vim.opt.sidescrolloff = 16
+opt.splitbelow = true
+opt.splitright = true
 
-vim.opt.updatetime = 100
-vim.opt.list = true
-vim.opt.listchars = "tab:  ,extends:›,precedes:‹,nbsp:·,trail:·"
+opt.formatoptions:remove "o"
 
-vim.g.python3_host_prog = "/usr/bin/python3"
+opt.swapfile = false
+opt.backup = false
+opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+opt.undofile = true
 
--- Always use system clipboard (I might regret this)
-vim.opt.clipboard = "unnamedplus"
+opt.termguicolors = true
+
+opt.scrolloff = 8
+opt.updatetime = 100
+opt.list = true
+opt.listchars = "tab:  ,extends:›,precedes:‹,nbsp:·,trail:·"
+
+opt.clipboard = "unnamedplus"
+
+opt.more = false
