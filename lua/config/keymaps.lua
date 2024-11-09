@@ -1,54 +1,49 @@
+local set = vim.keymap.set
+
+-- Leader key
 vim.g.mapleader = " "
 
-vim.keymap.set("n", "<leader>e", "<cmd>:Oil<CR>")
-vim.keymap.set("i", "<C-c>", "<Esc>")
+-- Open file explorer
+set("n", "<leader>e", "<cmd>:Oil<CR>")
+
+-- Use same behavior for <C-c> as <Esc>
+set("i", "<C-c>", "<Esc>")
 
 -- Keep things centered
-vim.keymap.set("n", "n", "nzz")
-vim.keymap.set("n", "N", "Nzz")
-vim.keymap.set("n", "<C-d>", "<C-d>zz")
-vim.keymap.set("n", "<C-u>", "<C-u>zz")
-vim.keymap.set("n", "<C-j>", "<cmd>cnext<CR>zz")
-vim.keymap.set("n", "<C-k>", "<cmd>cprev<CR>zz")
+set("n", "n", "nzz")
+set("n", "N", "Nzz")
+set("n", "<C-d>", "<C-d>zz")
+set("n", "<C-u>", "<C-u>zz")
+set("n", "<C-j>", "<cmd>cnext<CR>zz")
+set("n", "<C-k>", "<cmd>cprev<CR>zz")
 
 -- Copy to system clipboard
-vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
+set({ "n", "v" }, "<leader>y", [["+y]])
 
 -- Escape terminal mode
-vim.keymap.set("t", "<Esc>", "<C-\\><C-n>")
+set("t", "<Esc>", "<C-\\><C-n>")
 
--- Toggle hlsearch if it's on, otherwise just do "enter"
-vim.keymap.set("n", "<CR>", function()
-  ---@diagnostic disable-next-line: undefined-field
-  if vim.v.hlsearch == 1 then
-    vim.cmd.nohl()
-    return ""
-  else
-    return vim.keycode "<CR>"
-  end
-end, { expr = true })
-
-vim.keymap.set("n", "<leader>bd", "<cmd>bd<CR>")
+-- Delete buffer
+set("n", "<leader>bd", "<cmd>bd<CR>")
 
 -- Thanks to Mr. Primeagen
-vim.keymap.set({ "n", "v" }, "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
-vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
-vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+set({ "n", "v" }, "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
+
+-- Replace all occurences of word
+set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+
+-- Move lines around in visual mode
+set("v", "J", ":m '>+1<CR>gv=gv")
+set("v", "K", ":m '<-2<CR>gv=gv")
 
 -- Move between windows with actual arrow keys
-vim.keymap.set("n", "<Left>", "<C-w>h")
-vim.keymap.set("n", "<Down>", "<C-w>j")
-vim.keymap.set("n", "<Up>", "<C-w>k")
-vim.keymap.set("n", "<Right>", "<C-w>l")
+set("n", "<Left>", "<C-w>h")
+set("n", "<Down>", "<C-w>j")
+set("n", "<Up>", "<C-w>k")
+set("n", "<Right>", "<C-w>l")
 
 -- Duplicate line
-vim.keymap.set("n", "<leader>d", "mzyyp`zj")
+set("n", "<leader>d", "mzyyp`zj")
 
 -- Open a new terminal pane
-vim.keymap.set("n", "<leader>t", "<cmd>botright terminal<CR>")
--- Focus the terminal pane
-vim.keymap.set("n", "<leader>f", function()
-	local bufnr = vim.fn.bufnr("#")
-	vim.api.nvim_set_current_buf(bufnr)
-end)
+set("n", "<leader>t", "<cmd>botright terminal<CR>")
