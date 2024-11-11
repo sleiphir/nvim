@@ -1,4 +1,4 @@
-local branch_name = vim.fn.system("cat .git/HEAD | sed 's/.*\\///' | tr -d '\n'")
+local branch_name = vim.fn.system("git branch --show-current | tr -d '\n'")
 
 local function branch()
 	if branch_name ~= "" then
