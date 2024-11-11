@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.7.0](https://github.com/sleiphir/nvim/compare/v1.6.0...v1.7.0) (2024-11-11)
+
+
+### Features
+
+* add lualine.lua ([de7a7f6](https://github.com/sleiphir/nvim/commit/de7a7f655e0c9883f2f1b4705d33de2710dd5365))
+* add new colorschemes ([0e06ebe](https://github.com/sleiphir/nvim/commit/0e06ebe5ce26aae34f07c4d6132be75a2af6f61d))
+* avante.nvim ([bd6e432](https://github.com/sleiphir/nvim/commit/bd6e432b15293c30bc81049430715a43570a9857))
+* cleanup config ([4fabec4](https://github.com/sleiphir/nvim/commit/4fabec4249cb95dfebe6a0ad0a1e01aca094a1e9))
+* **lsp:** add golang autocmd on save ([8c2f01f](https://github.com/sleiphir/nvim/commit/8c2f01f9da92b4be79b38977fb1f2f71888cacac))
+* **ui:** add dressing.nvim ([1e6b9b6](https://github.com/sleiphir/nvim/commit/1e6b9b6b3b990ff388681eaa4b05287456b72c2f))
+
 ## [1.6.0](https://github.com/sleiphir/nvim/compare/v1.5.0...v1.6.0) (2024-09-30)
 
 
