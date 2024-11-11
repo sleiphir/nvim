@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.8.0](https://github.com/sleiphir/nvim/compare/v1.7.0...v1.8.0) (2024-11-11)
+
+
+### Features
+
+* add snippet support ([1cf7767](https://github.com/sleiphir/nvim/commit/1cf776744d2bb98d45c491bc8ae2cda8e4f85294))
+
+
+### Bug Fixes
+
+* **lualine:** use better command for parsing branch name ([85a92af](https://github.com/sleiphir/nvim/commit/85a92af06006ccb443b5d4807f323e27e28e0328))
+* use lsp_signature as a standalone plugin ([4cb2047](https://github.com/sleiphir/nvim/commit/4cb2047971ad58dcb1960e78c320835e34df1afb))
+
 ## [1.7.0](https://github.com/sleiphir/nvim/compare/v1.6.0...v1.7.0) (2024-11-11)
 
 
