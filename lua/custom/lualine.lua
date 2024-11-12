@@ -1,13 +1,3 @@
-local branch_name = vim.fn.system("git branch --show-current | tr -d '\n'")
-
-local function branch()
-	if branch_name ~= "" then
-		return branch_name .. ' '
-	else
-		return ""
-	end
-end
-
 require("lualine").setup({
 	options = {
 		icons_enabled = true,
@@ -30,7 +20,7 @@ require("lualine").setup({
 	},
 	sections = {
 		lualine_a = { "mode" },
-		lualine_b = { branch, "diff", "diagnostics" },
+		lualine_b = { {'branch', icon = {'', align='right'}} , "diff", "diagnostics" },
 		lualine_c = { "filename" },
 		lualine_x = { "filetype" },
 		lualine_y = {},
