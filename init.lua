@@ -22,3 +22,6 @@ require("lazy").setup({ import = "custom/plugins" }, {
 })
 
 vim.cmd([[colorscheme mellow]])
+
+-- Modify Comment highlight group to remove italics
+vim.cmd([[hi Comment cterm=NONE gui=NONE]])
