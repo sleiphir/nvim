@@ -14,9 +14,9 @@ ls.add_snippets("go", {
 
 	s("err", fmt([[
 	if err != nil {{
-		return err
+		return {}
 	}}
-	]], {})),
+	]], { i(1) })),
 
 	s("iferr", fmt([[
 	if err := {}; err != nil {{
