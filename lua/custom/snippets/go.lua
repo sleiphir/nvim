@@ -12,23 +12,18 @@ ls.add_snippets("go", {
 	s("fmt.info", fmt('fmt.Println("[INFO] {}")', { i(1) })),
 	s("fmt.error", fmt('fmt.Println("[ERROR] {}", {})', { i(1), i(2) })),
 
-	s("err", fmt([[
+	s("if err", fmt([[
 	if err != nil {{
+		{}
 		return {}
 	}}
-	]], { i(1) })),
+	]], { i(1), i(2) })),
 
-	s("iferr", fmt([[
-	if err := {}; err != nil {{
-		return err
-	}}
-	]], { i(1) })),
-
-	s("for", fmt([[
-	for {}, {} := range {} {{
+	s("fori", fmt([[
+	for i := range {} {{
 		{}
 	}}
-	]], { i(1), i(2), i(3), i(4) })),
+	]], { i(1), i(2), })),
 
 	s("if", fmt([[
 	if {} {{
