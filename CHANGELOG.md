@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.9.0](https://github.com/sleiphir/nvim/compare/v1.8.0...v1.9.0) (2024-12-06)
+
+
+### Features
+
+* add lazydev.nvim ([3c4da35](https://github.com/sleiphir/nvim/commit/3c4da351e5d4e1c5ebc8f195ffe5989de1c82614))
+* add ray-x/go.nvim ([4a3419e](https://github.com/sleiphir/nvim/commit/4a3419e02e6ea99aaf49984be75d44cb2b2ed785))
+* remove lazygit ([ecef385](https://github.com/sleiphir/nvim/commit/ecef385c0a202b9a39d9a5ba7f698af997c9fec7))
+
+
+### Bug Fixes
+
+* **cmp:** formatting using lspkind ([2c087db](https://github.com/sleiphir/nvim/commit/2c087db1a77227c4aa0400fea8053c803a1d8ebe))
+
 ## [1.8.0](https://github.com/sleiphir/nvim/compare/v1.7.0...v1.8.0) (2024-11-11)
 
 
