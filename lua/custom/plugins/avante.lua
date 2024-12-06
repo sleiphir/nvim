@@ -3,6 +3,7 @@ return {
 	lazy = false,
 	priority = 10,
 	opts = {
+		hints = { enabled = false },
 		mappings = {
 			submit = {
 				insert = "<C-s>"
@@ -38,6 +39,6 @@ return {
 	},
 	keys = {
 		{ "<leader>at", "<cmd>AvanteToggle<CR>", desc = "Toggle Avante" },
-		{ "<leader>af", "<cmd>AvanteFocus<CR>", desc = "Focus Avante" },
+		{ "<leader>af", "<cmd>AvanteFocus<CR>",  desc = "Focus Avante" },
 	}
 }
