@@ -21,6 +21,9 @@ return {
 			end,
 		})
 
+		-- run the current go file in a vertical split terminal pane
+		vim.keymap.set("n", "<leader><CR>", "<cmd>vsplit term://go run %<CR>")
+
 		-- Auto organize imports on save
 		vim.api.nvim_create_autocmd("BufWritePre", {
 			buffer = bufnr,
