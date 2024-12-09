@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.10.0](https://github.com/sleiphir/nvim/compare/v1.9.0...v1.10.0) (2024-12-09)
+
+
+### Features
+
+* add back autocmd insert mode on terminal open ([2d64865](https://github.com/sleiphir/nvim/commit/2d648650d0a2724d12a5dad5d299ee9c4b7bcbae))
+* **lsp:** add &lt;leader&gt;<CR> to run `go main %` (only for Go files) ([dba90a9](https://github.com/sleiphir/nvim/commit/dba90a94cf466f71cacb367720768b14b3cadd88))
+
 ## [1.9.0](https://github.com/sleiphir/nvim/compare/v1.8.0...v1.9.0) (2024-12-06)
 
 
