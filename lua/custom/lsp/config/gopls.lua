@@ -23,6 +23,8 @@ return {
 
 		-- run the current go file in a vertical split terminal pane
 		vim.keymap.set("n", "<leader><CR>", "<cmd>vsplit term://go run %<CR>")
+		-- open the Go scratchpad
+		vim.keymap.set("n", "<leader>q", "<cmd>e ~/personal/Go/test/main.go | normal 6G2|<CR>")
 
 		-- Auto organize imports on save
 		vim.api.nvim_create_autocmd("BufWritePre", {
