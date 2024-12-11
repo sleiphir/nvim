@@ -24,6 +24,12 @@ return {
 				["gx"] = "actions.open_external",
 				["g."] = "actions.toggle_hidden",
 			},
+			view_options = {
+				show_hidden = true,
+				is_always_hidden = function(name, _)
+					return name == ".git" or name == ".."
+				end,
+			},
 			win_options = {
 				statusline = "%{v:lua.CustomOilBar()}",
 			},
