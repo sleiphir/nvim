@@ -8,6 +8,26 @@ return {
 			submit = {
 				insert = "<C-s>"
 			}
+		},
+		windows = {
+			width = 45,
+			sidebar_header = {
+				enabled = false,
+			},
+			input = {
+				prefix = "",
+				height = 5,
+			},
+			ask = {
+				floating = false,
+				start_insert = true,
+				border = "rounded",
+				focus_on_apply = "ours",
+			},
+			edit = {
+				border = "rounded",
+				start_insert = false,
+			},
 		}
 	},
 	build = "make",
@@ -37,8 +57,4 @@ return {
 			ft = { "markdown", "Avante" },
 		},
 	},
-	keys = {
-		{ "<leader>at", "<cmd>AvanteToggle<CR>", desc = "Toggle Avante" },
-		{ "<leader>af", "<cmd>AvanteFocus<CR>",  desc = "Focus Avante" },
-	}
 }
