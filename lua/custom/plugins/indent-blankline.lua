@@ -6,7 +6,7 @@ return {
 		indent = {
 			char = "▏",
 			tab_char = "▏",
-			highlight = { "VertSplit" },
+			-- highlight = { "VertSplit" },
 		},
 		scope = {
 			enabled = true,
