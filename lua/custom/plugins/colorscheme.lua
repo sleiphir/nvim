@@ -1,5 +1,16 @@
 return {
 	{
+		"zenbones-theme/zenbones.nvim",
+		dependencies = "rktjmp/lush.nvim",
+		lazy = false,
+		priority = 1000,
+		-- you can set set configuration options here
+		config = function()
+			-- vim.g.zenbones_darken_comments = 45
+			vim.cmd.colorscheme('zenwritten')
+		end
+	},
+	{
 		"mellow-theme/mellow.nvim",
 		lazy = false,
 		priority = 1000,
@@ -11,9 +22,9 @@ return {
 		"kvrohit/rasmus.nvim",
 		priority = 1000,
 		init = function()
-			vim.g.rasmus_transparent = true
-			vim.g.rasmus_italic_comments = false
-			vim.cmd("colorscheme rasmus")
+			-- vim.g.rasmus_transparent = true
+			-- vim.g.rasmus_italic_comments = false
+			-- vim.cmd("colorscheme rasmus")
 		end
 	},
 	{
