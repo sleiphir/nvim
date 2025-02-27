@@ -19,7 +19,7 @@ vim.diagnostic.config({
 	float = {
 		style = "minimal",
 		border = "none",
-		source = "always",
+		source = "if_many",
 		header = "",
 		prefix = "",
 	},
@@ -53,8 +53,9 @@ lsp_zero.on_attach(function(_, bufnr)
 end)
 
 -- Mason configuration
-local ensure_installed = { "html", "rust_analyzer", "zls", "ts_ls" }
+local ensure_installed = { "html", "rust_analyzer", "zls" }
 require("mason-lspconfig").setup({
+	automatic_installation = true,
 	handlers = {
 		lsp_zero.default_setup,
 	},
