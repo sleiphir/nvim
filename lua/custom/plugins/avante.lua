@@ -26,7 +26,7 @@ return {
 			},
 			edit = {
 				border = "rounded",
-				start_insert = false,
+				start_insert = true,
 			},
 		}
 	},
