@@ -9,6 +9,9 @@ return {
 				insert = "<C-s>"
 			}
 		},
+		behaviour = {
+			auto_suggestions = false,
+		},
 		windows = {
 			width = 45,
 			sidebar_header = {
