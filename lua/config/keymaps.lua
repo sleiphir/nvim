@@ -10,8 +10,6 @@ set("n", "<leader>e", "<cmd>:Oil<CR>")
 set("i", "<C-c>", "<Esc>")
 
 -- Keep things centered
-set("n", "n", "nzz")
-set("n", "N", "Nzz")
 set("n", "<C-d>", "<C-d>zz")
 set("n", "<C-u>", "<C-u>zz")
 set("n", "<C-j>", "<cmd>cnext<CR>zz")
