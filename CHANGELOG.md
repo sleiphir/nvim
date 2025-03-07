@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.10.0](https://github.com/sleiphir/nvim/compare/v1.9.0...v1.10.0) (2025-03-07)
+
+
+### Features
+
+* add &lt;leader&gt;q to open the Go scratchpad (Only for Go files) ([3ed7615](https://github.com/sleiphir/nvim/commit/3ed7615c2b3f9be1b5c3f260147fcfe97eb7bafd))
+* add back autocmd insert mode on terminal open ([2d64865](https://github.com/sleiphir/nvim/commit/2d648650d0a2724d12a5dad5d299ee9c4b7bcbae))
+* add typescript lsp w/ volar ([146291c](https://github.com/sleiphir/nvim/commit/146291ce3be010eca4c4ba1932525c0415b82f01))
+* add vim-bujo ([7c9a5b2](https://github.com/sleiphir/nvim/commit/7c9a5b2a9fa443c2db35bed5c915f03076a66b9f))
+* enhance typescript configuration ([b700549](https://github.com/sleiphir/nvim/commit/b700549bf3f55df6aff984340505c8d7ce87a07b))
+* **lsp:** add &lt;leader&gt;<CR> to run `go main %` (only for Go files) ([dba90a9](https://github.com/sleiphir/nvim/commit/dba90a94cf466f71cacb367720768b14b3cadd88))
+* **telescope:** add `&lt;leader&gt;fm` keybinding for treesitter builtin ([756b357](https://github.com/sleiphir/nvim/commit/756b357e2bffa7a14ed1402991fd4dd50b6b222b))
+* **vim-bujo:** add git repo for ~/.cache/bujo and commit & push on save ([ff60086](https://github.com/sleiphir/nvim/commit/ff600866dc287e5eda5d4903ac5871e791ecbdb8))
+
 ## [1.9.0](https://github.com/sleiphir/nvim/compare/v1.8.0...v1.9.0) (2024-12-06)
 
 
