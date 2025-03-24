@@ -12,7 +12,7 @@ opt.expandtab = false
 opt.smartindent = true
 
 -- Highlight cursor line
-opt.cursorline = true
+-- opt.cursorline = true
 
 -- Use line wrapping
 opt.wrap = true

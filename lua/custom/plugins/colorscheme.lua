@@ -8,6 +8,8 @@ return {
 		config = function()
 			-- vim.g.zenbones_darken_comments = 45
 			vim.cmd.colorscheme('zenwritten')
+			-- Set transparent background and disable cursorline
+			vim.api.nvim_set_hl(0, "Normal", { bg = "NONE" })
 		end
 	},
 	{

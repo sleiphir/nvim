@@ -20,11 +20,11 @@ require("lualine").setup({
 	},
 	sections = {
 		lualine_a = { "mode" },
-		lualine_b = { {'branch', icon = {'', align='right'}} , "diff", "diagnostics" },
+		lualine_b = { { 'branch', icon = { '', align = 'right' } }, "diff", "diagnostics" },
 		lualine_c = { { "filename", path = 1 } },
 		lualine_x = { "filetype" },
 		lualine_y = {},
-		lualine_z = { "location" }
+		lualine_z = { { "location", color = { bg = 'none' } } },
 	},
 	inactive_sections = {
 		lualine_a = {},
@@ -39,3 +39,5 @@ require("lualine").setup({
 	inactive_winbar = {},
 	extensions = {}
 })
+
+vim.cmd("hi lualine_c_normal guibg=none")
