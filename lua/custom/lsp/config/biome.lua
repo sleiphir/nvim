@@ -1,9 +1,11 @@
 return {
 	on_attach = function(_, bufnr)
-		-- Auto format with eslint fix all
+		-- Format document on save
 		vim.api.nvim_create_autocmd("BufWritePre", {
 			buffer = bufnr,
-			command = "EslintFixAll",
+			callback = function()
+				vim.lsp.buf.format()
+			end,
 		})
-	end,
+	end
 }
