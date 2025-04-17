@@ -3,6 +3,15 @@ return {
 	lazy = false,
 	priority = 10,
 	opts = {
+		provider = "openai",
+		openai = {
+			endpoint = "https://api.openai.com/v1",
+			model = "gpt-4o",
+			timeout = 30000,
+			temperature = 0,
+			max_tokens = 8192,
+			--reasoning_effort = "medium", -- low|medium|high
+		},
 		hints = { enabled = false },
 		mappings = {
 			submit = {
