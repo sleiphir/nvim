@@ -3,13 +3,13 @@ return {
 	config = function()
 		require("conform").setup({
 			formatters_by_ft = {
-				html = { "prettierd" },
-				yaml = { "prettierd" },
-				javascript = { "prettierd" },
-				javascriptreact = { "prettierd" },
-				markdown = { "prettierd" },
-				typescript = { "prettierd" },
-				typescriptreact = { "prettierd" },
+				html = { "biome" },
+				yaml = { "biome" },
+				javascript = { "biome" },
+				javascriptreact = { "biome" },
+				markdown = { "biome" },
+				typescript = { "biome" },
+				typescriptreact = { "biome" },
 				["*"] = { "trim_whitespace" },
 			},
 			format_on_save = {
@@ -17,11 +17,9 @@ return {
 				lsp_fallback = true,
 			},
 			formatters = {
-				prettierd = {
+				biome = {
 					condition = function()
-						return vim.loop.fs_realpath(".prettierrc.js") ~= nil or
-							vim.loop.fs_realpath(".prettierrc") ~= nil
-					end,
+						return vim.loop.fs_realpath("biome.json") ~= nil end,
 				},
 			},
 		})
