@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.11.0](https://github.com/sleiphir/nvim/compare/v1.10.0...v1.11.0) (2025-04-18)
+
+
+### Features
+
+* add jsonls lsp ([6010546](https://github.com/sleiphir/nvim/commit/6010546517bed297f8737608868f19c35ac35956))
+* add yamlls lsp ([cd43fb1](https://github.com/sleiphir/nvim/commit/cd43fb110ffd3cb4b9c94137152a29ffa61d6005))
+
 ## [1.10.0](https://github.com/sleiphir/nvim/compare/v1.9.0...v1.10.0) (2025-03-07)
 
 
