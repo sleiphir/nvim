@@ -53,7 +53,7 @@ lsp_zero.on_attach(function(_, bufnr)
 end)
 
 -- Mason configuration
-local ensure_installed = { "html", "rust_analyzer", "zls" }
+local ensure_installed = { "rust_analyzer", "zls" }
 require("mason-lspconfig").setup({
 	automatic_installation = true,
 	handlers = {
