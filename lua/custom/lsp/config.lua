@@ -1,16 +1,4 @@
 local lsp_zero = require("lsp-zero")
-local lspconfig = require("lspconfig")
-
-local servers = {}
--- Autoload LSPs from ./config/*.lua files
-for _, ft_path in ipairs(vim.api.nvim_get_runtime_file("lua/custom/lsp/config/*.lua", true)) do
-	local lua_path = ft_path:gsub(".*/lua/(.+)%.lua", "%1")
-	local module_path = lua_path:gsub('/', '.')
-	local config = require(module_path)
-	local name = module_path:match("%.([^%.]+)$")
-	lspconfig[name].setup(config)
-	table.insert(servers, name)
-end
 
 -- Configure Vim diagnostic
 vim.diagnostic.config({
@@ -52,13 +40,3 @@ lsp_zero.on_attach(function(_, bufnr)
 	vim.keymap.set("n", "<leader>D", function() vim.lsp.buf.type_definition() end, opts)
 	vim.keymap.set("n", "<leader><leader>", function() vim.lsp.buf.format() end, opts)
 end)
-
--- Mason configuration
-local ensure_installed = { "rust_analyzer", "zls" }
-require("mason-lspconfig").setup({
-	automatic_installation = true,
-	handlers = {
-		lsp_zero.default_setup,
-	},
-	ensure_installed = vim.list_extend(ensure_installed, servers),
-})
