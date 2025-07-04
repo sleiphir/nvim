@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.11.0](https://github.com/sleiphir/nvim/compare/v1.10.0...v1.11.0) (2025-07-04)
+
+
+### Features
+
+* add custom keymaps for supermaven ([ced1dc1](https://github.com/sleiphir/nvim/commit/ced1dc1397e41a9e83bba9778721f6a7b8b71a1e))
+* add jsonls lsp ([6010546](https://github.com/sleiphir/nvim/commit/6010546517bed297f8737608868f19c35ac35956))
+* add supermaven ([f8ab09b](https://github.com/sleiphir/nvim/commit/f8ab09ba881180e9babbf34c38d8129c68d5ceb5))
+* add yamlls lsp ([cd43fb1](https://github.com/sleiphir/nvim/commit/cd43fb110ffd3cb4b9c94137152a29ffa61d6005))
+* **lsp:** disable inlay hints ([40a5297](https://github.com/sleiphir/nvim/commit/40a52978a9eec19510424c70280046c63a2ec721))
+* **supermaven:** add on-demand autocompletion ([977f625](https://github.com/sleiphir/nvim/commit/977f625e5dec9beaa15a6eea0c5398eaca95ee82))
+
 ## [1.10.0](https://github.com/sleiphir/nvim/compare/v1.9.0...v1.10.0) (2025-03-07)
 
 
