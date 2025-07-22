@@ -4,12 +4,8 @@ return {
 		dependencies = "rktjmp/lush.nvim",
 		lazy = false,
 		priority = 1000,
-		-- you can set set configuration options here
 		config = function()
-			-- vim.g.zenbones_darken_comments = 45
-			vim.cmd.colorscheme('zenwritten')
-			-- Set transparent background and disable cursorline
-			vim.api.nvim_set_hl(0, "Normal", { bg = "NONE" })
+			-- vim.cmd.colorscheme('zenwritten')
 		end
 	},
 	{
@@ -24,8 +20,6 @@ return {
 		"kvrohit/rasmus.nvim",
 		priority = 1000,
 		init = function()
-			-- vim.g.rasmus_transparent = true
-			-- vim.g.rasmus_italic_comments = false
 			-- vim.cmd("colorscheme rasmus")
 		end
 	},
@@ -48,7 +42,52 @@ return {
 		lazy = false,
 		priority = 1000,
 		init = function()
-			-- vim.cmd("colorscheme evergarden")
+			-- vim.cmd("colorscheme evergarden-winter")
+			-- vim.cmd("hi Normal guibg=NONE")
 		end
-	}
+	},
+	{
+		"felipeagc/fleet-theme-nvim",
+		opts = {},
+		lazy = false,
+		priority = 1000,
+		init = function()
+			-- vim.cmd("colorscheme fleet")
+		end
+	},
+	{
+		"projekt0n/github-nvim-theme",
+		lazy = false,
+		priority = 1000,
+		init = function()
+			-- vim.cmd("colorscheme github_dark_default")
+			-- vim.cmd("hi Normal guibg=NONE")
+		end
+	},
+	{
+		'ellisonleao/gruvbox.nvim',
+		opts = {},
+		lazy = false,
+		priority = 1000,
+		init = function()
+			-- vim.cmd("colorscheme gruvbox")
+		end
+	},
+	{
+		'EdenEast/nightfox.nvim',
+		opts = {},
+		lazy = false,
+		priority = 1000,
+		init = function()
+			vim.cmd("colorscheme carbonfox")
+		end
+	},
+	{
+		'nyoom-engineering/oxocarbon.nvim',
+		lazy = false,
+		priority = 1000,
+		init = function()
+			-- vim.cmd("colorscheme oxocarbon")
+		end
+	},
 }
