@@ -3,8 +3,9 @@ return {
 	config = function()
 		require("conform").setup({
 			formatters_by_ft = {
-				html = { "biome" },
-				yaml = { "biome" },
+				html = { "biome", "html-lsp" },
+				json = { "biome" },
+				yaml = { "yamlls" },
 				javascript = { "biome" },
 				javascriptreact = { "biome" },
 				markdown = { "biome" },
@@ -19,7 +20,7 @@ return {
 			formatters = {
 				biome = {
 					condition = function()
-						return vim.loop.fs_realpath("biome.json") ~= nil end,
+						return vim.uv.fs_realpath("biome.json") ~= nil end,
 				},
 			},
 		})
