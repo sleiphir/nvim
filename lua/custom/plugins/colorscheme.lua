@@ -33,7 +33,7 @@ return {
 			},
 		},
 		init = function()
-			-- vim.cmd("colorscheme lackluster-night")
+			-- vim.cmd("colorscheme lackluster-mint")
 		end
 	},
 	{

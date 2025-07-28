@@ -3,9 +3,9 @@ return {
 	config = function()
 		require("conform").setup({
 			formatters_by_ft = {
+				go = { "go" },
 				html = { "biome", "html-lsp" },
-				json = { "biome" },
-				yaml = { "yamlls" },
+				yaml = { "prettier" },
 				javascript = { "biome" },
 				javascriptreact = { "biome" },
 				markdown = { "biome" },
@@ -13,15 +13,25 @@ return {
 				typescriptreact = { "biome" },
 				["*"] = { "trim_whitespace" },
 			},
-			format_on_save = {
-				timeout_ms = 500,
-				lsp_fallback = true,
-			},
 			formatters = {
 				biome = {
 					condition = function()
-						return vim.uv.fs_realpath("biome.json") ~= nil end,
-				},
+						return vim.uv.fs_realpath("biome.json") ~= nil
+					end,
+					command = "biome",
+					args = {
+						"check",
+						"--fix",
+						"--unsafe",
+						"$FILENAME",
+					},
+					stdin = false,
+				}
+			},
+			format_on_save = {
+				lsp_fallback = true,
+				async = false,
+				timeout_ms = 500,
 			},
 		})
 	end,
