@@ -7,6 +7,6 @@ return {
 		]]
 	end,
 	keys = {
-		{ "<leader>bt", "<cmd>Todo<CR>", desc = "Open Todo list" },
+		{ "<leader>t", "<cmd>Todo<CR>", desc = "Open Todo list" },
 	},
 }

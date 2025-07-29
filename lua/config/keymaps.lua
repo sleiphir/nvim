@@ -42,6 +42,3 @@ set("n", "<Right>", "<C-w>l")
 
 -- Duplicate line
 set("n", "<leader>d", "mzyyp`zj")
-
--- Open a new terminal pane
-set("n", "<leader>t", "<cmd>botright terminal<CR>")
