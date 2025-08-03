@@ -5,7 +5,7 @@ require("typescript-tools").setup {
 			client.server_capabilities.documentRangeFormattingProvider = false
 
 			-- run the current go file in a vertical split terminal pane
-			vim.keymap.set("n", "<leader><CR>", "<cmd>vsplit term://bun %<CR>")
+			vim.keymap.set("n", "<leader><CR>", "<cmd>vsplit term://npx tsx %<CR>")
 			-- open the Go scratchpad
 			vim.keymap.set("n", "<leader>q", "<cmd>e ~/personal/Node/test/main.ts<CR>")
 		end,

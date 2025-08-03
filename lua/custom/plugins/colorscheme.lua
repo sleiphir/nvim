@@ -37,7 +37,7 @@ return {
 		end
 	},
 	{
-		'comfysage/evergarden',
+		"comfysage/evergarden",
 		opts = {},
 		lazy = false,
 		priority = 1000,
@@ -64,17 +64,17 @@ return {
 			-- vim.cmd("hi Normal guibg=NONE")
 		end
 	},
-	{
-		'ellisonleao/gruvbox.nvim',
-		opts = {},
+{
+		"morhetz/gruvbox",
 		lazy = false,
 		priority = 1000,
 		init = function()
+			-- vim.o.background = "light"
 			-- vim.cmd("colorscheme gruvbox")
 		end
 	},
 	{
-		'EdenEast/nightfox.nvim',
+		"EdenEast/nightfox.nvim",
 		opts = {},
 		lazy = false,
 		priority = 1000,
@@ -83,11 +83,21 @@ return {
 		end
 	},
 	{
-		'nyoom-engineering/oxocarbon.nvim',
+		"nyoom-engineering/oxocarbon.nvim",
 		lazy = false,
 		priority = 1000,
 		init = function()
 			-- vim.cmd("colorscheme oxocarbon")
 		end
 	},
+	{
+		"gko/oldbook-theme",
+		lazy = false,
+		priority = 1000,
+		init = function()
+			-- vim.o.background = "light"
+			-- vim.cmd("colorscheme oldbook")
+		end
+	}
+
 }

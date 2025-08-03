@@ -2,6 +2,9 @@ return {
 	"yetone/avante.nvim",
 	lazy = false,
 	priority = 10,
+	keys = {
+		{ "<leader>an", "<cmd>AvanteChatNew<cr>", desc = "Avante New Chat" },
+	},
 	opts = {
 		providers = {
 			openai = {
