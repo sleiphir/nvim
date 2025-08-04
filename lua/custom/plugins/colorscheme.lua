@@ -79,7 +79,7 @@ return {
 		lazy = false,
 		priority = 1000,
 		init = function()
-			vim.cmd("colorscheme carbonfox")
+			-- vim.cmd("colorscheme carbonfox")
 		end
 	},
 	{
@@ -95,9 +95,8 @@ return {
 		lazy = false,
 		priority = 1000,
 		init = function()
-			-- vim.o.background = "light"
-			-- vim.cmd("colorscheme oldbook")
+			vim.o.background = "light"
+			vim.cmd("colorscheme oldbook")
 		end
 	}
-
 }
