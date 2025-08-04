@@ -9,10 +9,10 @@ return {
 
 		lint.linters_by_ft = {
 			go = { "golangcilint" },
-			javascript = { "biomejs", "eslint_d" },
-			typescript = { "biomejs", "eslint_d" },
-			javascriptreact = { "biomejs", "eslint_d" },
-			typescriptreact = { "biomejs", "eslint_d" },
+			javascript = { "biomejs" },
+			typescript = { "biomejs" },
+			javascriptreact = { "biomejs" },
+			typescriptreact = { "biomejs" },
 		}
 
 		local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
