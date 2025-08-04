@@ -10,12 +10,11 @@ return {
 			openai = {
 				endpoint = "https://api.openai.com/v1",
 				model = "gpt-4o",
-				timeout = 30000,
+				timeout = 60000,
 				extra_request_body = {
 					temperature = 0,
 				},
 				max_tokens = 8192,
-				--reasoning_effort = "medium", -- low|medium|high
 			},
 		},
 		hints = { enabled = false },
