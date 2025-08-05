@@ -22,7 +22,7 @@ require("lualine").setup({
 		lualine_a = { "mode" },
 		lualine_b = { { 'branch', icon = { '', align = 'right' } }, "diff", "diagnostics" },
 		lualine_c = { { "filename", path = 1 } },
-		lualine_x = { "filetype" },
+		lualine_x = { { "filetype", color = { bg = 'none' } } },
 		lualine_y = {},
 		lualine_z = { { "location", color = { bg = 'none' } } },
 	},

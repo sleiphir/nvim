@@ -64,7 +64,7 @@ return {
 			-- vim.cmd("hi Normal guibg=NONE")
 		end
 	},
-{
+	{
 		"morhetz/gruvbox",
 		lazy = false,
 		priority = 1000,
@@ -96,7 +96,7 @@ return {
 		priority = 1000,
 		init = function()
 			vim.o.background = "light"
-			vim.cmd("colorscheme oldbook")
+			vim.cmd("colorscheme oldbook-lsp")
 		end
 	}
 }

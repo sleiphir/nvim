@@ -12,7 +12,7 @@ opt.expandtab = false
 opt.smartindent = true
 
 -- Highlight cursor line
-vim.opt.cursorline = true
+opt.cursorline = true
 vim.api.nvim_set_hl(0, "CursorLine", { bg = "#ede7da" })
 
 -- Use line wrapping

@@ -37,11 +37,12 @@ return {
 
 		-- Add keybinding for manual formatting
 		vim.keymap.set({ "n", "v" }, "<leader><leader>", function()
-			require("conform").format({
-				lsp_fallback = true,
-				async = false,
-				timeout_ms = 1000,
-			})
+			vim.lsp.buf.format()
+			-- require("conform").format({
+			-- 	lsp_fallback = true,
+			-- 	async = false,
+			-- 	timeout_ms = 1000,
+			-- })
 		end, { desc = "Format file or range (in visual mode)" })
 	end,
 }

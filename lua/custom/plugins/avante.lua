@@ -26,6 +26,12 @@ return {
 		behaviour = {
 			auto_suggestions = false,
 		},
+		highlights = {
+			diff = {
+				current = "DiffText",
+				incoming = "DiffAdd",
+			},
+		},
 		windows = {
 			width = 45,
 			sidebar_header = {
