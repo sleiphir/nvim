@@ -98,5 +98,24 @@ return {
 			vim.o.background = "light"
 			vim.cmd("colorscheme oldbook-lsp")
 		end
+	},
+	{
+		"folke/tokyonight.nvim",
+		dependencies = "rktjmp/lush.nvim",
+		lazy = false,
+		priority = 1000,
+		config = function()
+			-- vim.cmd.colorscheme('tokyonight-night')
+		end
+	},
+	{
+		"oahlen/iceberg.nvim",
+		dependencies = "rktjmp/lush.nvim",
+		lazy = false,
+		priority = 1000,
+		config = function()
+			-- vim.o.background = "dark"
+			-- vim.cmd.colorscheme('iceberg')
+		end
 	}
 }
