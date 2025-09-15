@@ -7,7 +7,7 @@ require("typescript-tools").setup {
 			-- run the current go file in a vertical split terminal pane
 			vim.keymap.set("n", "<leader><CR>", "<cmd>vsplit term://npx tsx %<CR>")
 			-- open the Go scratchpad
-			vim.keymap.set("n", "<leader>q", "<cmd>e ~/personal/Node/test/main.ts<CR>")
+			vim.keymap.set("n", "<leader>q", "<cmd>e ~/personal/Node/test/src/index.ts<CR>")
 		end,
 	settings = {
 		jsx_close_tag = {

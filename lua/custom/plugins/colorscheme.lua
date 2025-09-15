@@ -5,7 +5,7 @@ return {
 		lazy = false,
 		priority = 1000,
 		config = function()
-			-- vim.cmd.colorscheme('zenwritten')
+			-- vim.cmd.colorscheme("zenwritten")
 		end
 	},
 	{
@@ -14,45 +14,6 @@ return {
 		priority = 1000,
 		init = function()
 			-- vim.cmd("colorscheme mellow")
-		end
-	},
-	{
-		"kvrohit/rasmus.nvim",
-		priority = 1000,
-		init = function()
-			-- vim.cmd("colorscheme rasmus")
-		end
-	},
-	{
-		"slugbyte/lackluster.nvim",
-		lazy = false,
-		priority = 1000,
-		opts = {
-			tweak_syntax = {
-				comment = "#5a5a5a",
-			},
-		},
-		init = function()
-			-- vim.cmd("colorscheme lackluster-mint")
-		end
-	},
-	{
-		"comfysage/evergarden",
-		opts = {},
-		lazy = false,
-		priority = 1000,
-		init = function()
-			-- vim.cmd("colorscheme evergarden-winter")
-			-- vim.cmd("hi Normal guibg=NONE")
-		end
-	},
-	{
-		"felipeagc/fleet-theme-nvim",
-		opts = {},
-		lazy = false,
-		priority = 1000,
-		init = function()
-			-- vim.cmd("colorscheme fleet")
 		end
 	},
 	{
@@ -83,39 +44,72 @@ return {
 		end
 	},
 	{
-		"nyoom-engineering/oxocarbon.nvim",
+		"shaunsingh/nord.nvim",
 		lazy = false,
 		priority = 1000,
-		init = function()
-			-- vim.cmd("colorscheme oxocarbon")
-		end
-	},
-	{
-		"gko/oldbook-theme",
-		lazy = false,
-		priority = 1000,
-		init = function()
-			vim.o.background = "light"
-			vim.cmd("colorscheme oldbook-lsp")
-		end
-	},
-	{
-		"folke/tokyonight.nvim",
-		dependencies = "rktjmp/lush.nvim",
-		lazy = false,
-		priority = 1000,
+		opts = {},
 		config = function()
-			-- vim.cmd.colorscheme('tokyonight-night')
+			-- vim.o.background = "dark"
+			-- vim.cmd("colorscheme nord")
 		end
 	},
 	{
-		"oahlen/iceberg.nvim",
-		dependencies = "rktjmp/lush.nvim",
+		"AlexvZyl/nordic.nvim",
+		lazy = false,
+		priority = 1000,
+		opts = {},
+		config = function()
+			-- vim.o.background = "dark"
+			-- vim.cmd("colorscheme nordic")
+		end
+	},
+	{
+		"thesimonho/kanagawa-paper.nvim",
 		lazy = false,
 		priority = 1000,
 		config = function()
 			-- vim.o.background = "dark"
-			-- vim.cmd.colorscheme('iceberg')
+			-- vim.cmd.colorscheme("kanagawa-paper")
+		end
+	},
+	{
+		"Mofiqul/adwaita.nvim",
+		lazy = false,
+		priority = 1000,
+		config = function()
+			-- vim.o.background = "dark"
+			-- vim.cmd.colorscheme("adwaita")
+		end
+	},
+	{
+		"HoNamDuong/hybrid.nvim",
+		lazy = false,
+		priority = 1000,
+		config = function()
+			-- vim.o.background = "dark"
+			-- vim.cmd.colorscheme("hybrid")
+		end
+	},
+	{
+		"vague2k/vague.nvim",
+		lazy = false,
+		priority = 1000,
+		config = function()
+			vim.o.background = "dark"
+			vim.cmd.colorscheme("vague")
+			-- set IblScope highlighting to #1C1C1C
+			vim.api.nvim_set_hl(0, "IblScope", { fg = "#3f3f42" })
+			vim.api.nvim_set_hl(0, "IblIndent", { fg = "#2a2a2b" })
+			vim.o.cursorline = false
+		end
+	},
+	{
+		"Shatur/neovim-ayu",
+		lazy = false,
+		priority = 1000,
+		config = function()
+			-- vim.o.background = "dark"
+			-- vim.cmd.colorscheme("ayu")
 		end
 	}
 }

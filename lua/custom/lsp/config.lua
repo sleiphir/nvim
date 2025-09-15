@@ -1,17 +1,17 @@
 local lsp_zero = require("lsp-zero")
 
 -- Configure Vim diagnostic
-vim.diagnostic.config({
-	virtual_text = true,
-	severity_sort = true,
-	float = {
-		style = "minimal",
-		border = "none",
-		source = "if_many",
-		header = "",
-		prefix = "",
-	},
-})
+-- vim.diagnostic.config({
+-- 	virtual_text = true,
+-- 	severity_sort = true,
+-- 	float = {
+-- 		style = "minimal",
+-- 		border = "none",
+-- 		source = "if_many",
+-- 		header = "",
+-- 		prefix = "",
+-- 	},
+-- })
 
 -- Lsp icons
 lsp_zero.set_sign_icons({

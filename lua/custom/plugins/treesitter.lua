@@ -20,7 +20,6 @@ return {
 			},
 			auto_install = true,
 			indent = { enable = true },
-			ensure_installed = { "lua", "vim", "vimdoc", "typescript", "javascript", "go", "c", "cpp", "rust", "zig", "html", "css" },
 			incremental_selection = {
 				enable = true,
 				keymaps = {
