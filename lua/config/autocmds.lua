@@ -1,3 +1,28 @@
+-- Enable Tree-Sitter
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = {
+		"c",
+		"html",
+		"javascript",
+		"jsx",
+		"lua",
+		"markdown",
+		"python",
+		"toml",
+		"tsx",
+		"typescript",
+		"vim",
+		"xml",
+		"yaml",
+		"go",
+		"gomod",
+		"gosum",
+	},
+	callback = function()
+		vim.treesitter.start()
+	end,
+})
+
 -- Auto insert mode on TermOpen
 vim.api.nvim_create_autocmd({ "TermOpen", "BufEnter" }, {
 	pattern = { "*" },
@@ -5,7 +30,7 @@ vim.api.nvim_create_autocmd({ "TermOpen", "BufEnter" }, {
 		if vim.opt.buftype:get() == "terminal" then
 			vim.cmd(":startinsert")
 		end
-	end
+	end,
 })
 
 -- vim-bujo auto commit & push on save
@@ -17,7 +42,9 @@ vim.api.nvim_create_autocmd("BufWritePost", {
 		local filepath = vim.api.nvim_buf_get_name(0)
 		if filepath:match(vim.fn.expand("~/.cache/bujo/")) then
 			vim.fn.jobstart({
-				"sh", "-c", "cd ~/.cache/bujo && git add . && git commit -m 'Auto-update bujo files' && git push"
+				"sh",
+				"-c",
+				"cd ~/.cache/bujo && git add . && git commit -m 'Auto-update bujo files' && git push",
 			}, {
 				on_exit = function(_, code)
 					if code == 0 then
@@ -29,7 +56,7 @@ vim.api.nvim_create_autocmd("BufWritePost", {
 							vim.notify("Error syncing bujo files", vim.log.levels.ERROR)
 						end)
 					end
-				end
+				end,
 			})
 		end
 	end,
