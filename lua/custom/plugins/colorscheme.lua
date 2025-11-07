@@ -21,8 +21,8 @@ return {
 		lazy = false,
 		priority = 1000,
 		init = function()
-			-- vim.cmd("colorscheme github_dark_default")
-			-- vim.cmd("hi Normal guibg=NONE")
+			vim.o.background = "dark"
+			vim.cmd("colorscheme github_dark")
 		end
 	},
 	{
@@ -95,12 +95,12 @@ return {
 		lazy = false,
 		priority = 1000,
 		config = function()
-			vim.o.background = "dark"
-			vim.cmd.colorscheme("vague")
+			-- vim.o.background = "dark"
+			-- vim.cmd.colorscheme("vague")
 			-- set IblScope highlighting to #1C1C1C
-			vim.api.nvim_set_hl(0, "IblScope", { fg = "#3f3f42" })
-			vim.api.nvim_set_hl(0, "IblIndent", { fg = "#2a2a2b" })
-			vim.o.cursorline = false
+			-- vim.api.nvim_set_hl(0, "IblScope", { fg = "#3f3f42" })
+			-- vim.api.nvim_set_hl(0, "IblIndent", { fg = "#2a2a2b" })
+			-- vim.o.cursorline = false
 		end
 	},
 	{
