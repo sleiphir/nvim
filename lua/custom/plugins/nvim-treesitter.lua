@@ -1,47 +1,6 @@
 return {
-	{
-		"nvim-treesitter/nvim-treesitter",
-		branch = "main",
-		lazy = false,
-		build = ":TSUpdate",
-		config = function()
-			require("nvim-treesitter").setup({
-			indent = { enable = true },
-			highlight = { enable = true },
-			ensure_installed = {
-				"bash",
-				"c",
-				"diff",
-				"html",
-				"javascript",
-				"jsx",
-				"jsdoc",
-				"json",
-				"jsonc",
-				"lua",
-				"luadoc",
-				"luap",
-				"markdown",
-				"markdown_inline",
-				"printf",
-				"python",
-				"query",
-				"regex",
-				"toml",
-				"tsx",
-				"typescript",
-				"vim",
-				"vimdoc",
-				"xml",
-				"yaml",
-				"go",
-				"gomod",
-				"gosum",
-			},
-		})
-		end,
-	},
-
+	-- Treesitter
+	{ "nvim-treesitter/nvim-treesitter", branch = 'master', lazy = false, build = ":TSUpdate" },
 	-- Show context of the current function
 	{
 		"nvim-treesitter/nvim-treesitter-context",
