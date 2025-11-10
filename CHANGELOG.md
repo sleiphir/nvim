@@ -2,7 +2,6 @@
 
 ## [1.10.0](https://github.com/sleiphir/nvim/compare/v1.9.0...v1.10.0) (2025-03-07)
 
-
 ### Features
 
 * add &lt;leader&gt;q to open the Go scratchpad (Only for Go files) ([3ed7615](https://github.com/sleiphir/nvim/commit/3ed7615c2b3f9be1b5c3f260147fcfe97eb7bafd))

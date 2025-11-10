@@ -3,7 +3,7 @@ local opt = vim.opt
 -- Better line number display
 opt.number = true
 opt.relativenumber = true
-opt.signcolumn = 'yes'
+opt.signcolumn = "yes"
 
 -- Use tabs
 opt.tabstop = 4

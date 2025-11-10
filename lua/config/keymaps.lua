@@ -41,4 +41,4 @@ set("n", "<Up>", "<C-w>k")
 set("n", "<Right>", "<C-w>l")
 
 -- Duplicate line
-set("n", "<leader>d", "mzyyp`zj")
+-- set("n", "<leader>d", "mzyyp`zj")
