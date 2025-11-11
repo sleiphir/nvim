@@ -13,42 +13,42 @@ return {
 	keys = {
 		-- Debugger
 		{
-			"<leader>dt",
+			"<F9>",
 			function()
 				require("dap").toggle_breakpoint()
 			end,
 			desc = "Toggle Breakpoint",
 		},
 		{
-			"<leader>dc",
+			"<F5>",
 			function()
 				require("dap").continue()
 			end,
 			desc = "Continue",
 		},
 		{
-			"<leader>di",
+			"<F11>",
 			function()
 				require("dap").step_into()
 			end,
 			desc = "Step Into",
 		},
 		{
-			"<leader>do",
+			"<F10>",
 			function()
 				require("dap").step_over()
 			end,
 			desc = "Step Over",
 		},
 		{
-			"<leader>du",
+			"<S-F11>",
 			function()
 				require("dap").step_out()
 			end,
 			desc = "Step Out",
 		},
 		{
-			"<leader>dr",
+			"<F12>",
 			function()
 				require("dap").repl.open()
 			end,

@@ -8,6 +8,8 @@ dap_virtual_text.setup({
 	enabled = true,
 })
 
+dap.set_log_level("DEBUG")
+
 mason_dap.setup({
 	ensure_installed = { "cppdbg", "js" },
 	automatic_installation = true,
@@ -31,34 +33,37 @@ mason_dap.setup({
 dap.adapters["pwa-node"] = {
 	type = "server",
 	host = "localhost",
-	port = 9229, -- default debug port for Node.js
+	port = "${port}",
 	executable = {
 		command = "node",
 		args = {
 			vim.fn.stdpath("data") .. "/mason/packages/js-debug-adapter/js-debug/src/dapDebugServer.js",
-			"${port}"
+			"${port}",
 		},
-	}
-}
-
--- Configurations for Next.js (Node.js)
-dap.configurations.javascript = {
-	{
-		name = "Launch Next.js",
-		type = "pwa-node",
-		request = "launch",
-		-- Path to your Next.js entry point
-		program = "${workspaceFolder}/node_modules/next/dist/bin/next",
-		args = { "dev" }, -- start in dev mode
-		cwd = "${workspaceFolder}",
-		runtimeArgs = { "--inspect-brk" },
-		sourceMaps = true,
-		console = "integratedTerminal",
-		internalConsoleOptions = "neverOpen",
 	},
 }
 
--- For TypeScript (if your project uses TS)
+-- Configurations for Node.js
+dap.configurations.javascript = {
+	{
+		type = "pwa-node",
+		request = "attach",
+		name = "Attach",
+		address = "localhost",
+		port = 9229,
+		cwd = "${workspaceFolder}",
+		restart = true,
+	},
+	{
+		type = "pwa-node",
+		request = "launch",
+		name = "Launch file",
+		program = "${file}",
+		cwd = "${workspaceFolder}",
+	},
+}
+
+-- For TypeScript
 dap.configurations.typescript = dap.configurations.javascript
 
 -- DAP UI
