@@ -44,7 +44,7 @@ vim.lsp.config('lua_ls', {
 					-- vim.fn.expand("~/.local/share/love2d/library"),
 					-- Depending on the usage, you might want to add additional paths
 					-- here.
-					'${3rd}/love2d/library'
+					-- '${3rd}/love2d/library'
 					-- '${3rd}/busted/library'
 				}
 				-- Or pull in all of 'runtimepath'.

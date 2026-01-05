@@ -3,15 +3,14 @@ return {
 	config = function()
 		require("conform").setup({
 			formatters_by_ft = {
-				go = { "go" },
-				html = { "biome", "html-lsp", "eslint" },
+				go = { "gofumpt" },
+				html = { "biome", "prettier" },
 				yaml = { "prettier" },
-				css = { "eslint" },
-				javascript = { "biome", "eslint" },
-				javascriptreact = { "biome", "eslint" },
+				json = { "jq" },
+				css = { "prettier" },
+				javascript = { "biome", "prettier" },
 				typescript = { "biome" },
-				typescriptreact = { "biome" },
-				["*"] = { "trim_whitespace" },
+				["*"] = { "codespell", "trim_whitespace" },
 			},
 			formatters = {
 				biome = {
@@ -37,12 +36,11 @@ return {
 
 		-- Add keybinding for manual formatting
 		vim.keymap.set({ "n", "v" }, "<leader><leader>", function()
-			vim.lsp.buf.format()
-			-- require("conform").format({
-			-- 	lsp_fallback = true,
-			-- 	async = false,
-			-- 	timeout_ms = 1000,
-			-- })
+			require("conform").format({
+				lsp_fallback = true,
+				async = false,
+				timeout_ms = 1000,
+			})
 		end, { desc = "Format file or range (in visual mode)" })
 	end,
 }
