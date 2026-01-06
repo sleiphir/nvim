@@ -1,5 +1,28 @@
 # Changelog
 
+## [1.11.0](https://github.com/sleiphir/nvim/compare/v1.10.0...v1.11.0) (2026-01-06)
+
+
+### Features
+
+* add custom keymaps for supermaven ([ced1dc1](https://github.com/sleiphir/nvim/commit/ced1dc1397e41a9e83bba9778721f6a7b8b71a1e))
+* add jsonls lsp ([6010546](https://github.com/sleiphir/nvim/commit/6010546517bed297f8737608868f19c35ac35956))
+* add new colorschemes ([374fe0c](https://github.com/sleiphir/nvim/commit/374fe0c585a28771d7ebf2356f10a8fdef23727b))
+* add nvim-dap for debugging ([4da5013](https://github.com/sleiphir/nvim/commit/4da501359d82c69cfcbc9ca9ed1e51c2a5e89ad2))
+* add supermaven ([f8ab09b](https://github.com/sleiphir/nvim/commit/f8ab09ba881180e9babbf34c38d8129c68d5ceb5))
+* add tailwindcss lsp config ([e46d052](https://github.com/sleiphir/nvim/commit/e46d052cb286f4b1c1527053c049a96fd0efe789))
+* add yamlls lsp ([cd43fb1](https://github.com/sleiphir/nvim/commit/cd43fb110ffd3cb4b9c94137152a29ffa61d6005))
+* **conform:** add additional configs ([a9222a5](https://github.com/sleiphir/nvim/commit/a9222a57f795c36145e3c08cf5aaf767c1023ca9))
+* **lsp:** add dockerls and docker_compose_language_service ([5dafced](https://github.com/sleiphir/nvim/commit/5dafced30ee2f20ffe545c309d576e478689887c))
+* **lsp:** add html-lsp + update conform config ([6cb0473](https://github.com/sleiphir/nvim/commit/6cb047320f087e4b8f64d35b2c56d3b1eff9e1da))
+* **lsp:** add prismals ([4c98909](https://github.com/sleiphir/nvim/commit/4c989092b4426814d312b0af9de150107e36c9cb))
+* **lsp:** disable inlay hints ([40a5297](https://github.com/sleiphir/nvim/commit/40a52978a9eec19510424c70280046c63a2ec721))
+* **lsp:** update lspconfig, add root lsp directory ([6340aae](https://github.com/sleiphir/nvim/commit/6340aae11b48ad20d625f29a33af3cfcba6e0f8c))
+* modify LSPs to prefer conform for formatting ([6efd8a3](https://github.com/sleiphir/nvim/commit/6efd8a3873e435c09b5a4fbfc806c667e634df9f))
+* **plugins:** add nvim-tree ([7739a48](https://github.com/sleiphir/nvim/commit/7739a4878b75204128af9e3d79dc16b006942605))
+* **supermaven:** add on-demand autocompletion ([977f625](https://github.com/sleiphir/nvim/commit/977f625e5dec9beaa15a6eea0c5398eaca95ee82))
+* **telescope:** add g/ to search all project files ([401d3af](https://github.com/sleiphir/nvim/commit/401d3aff990900bf44e4392912cb5a938a27276c))
+
 ## [1.10.0](https://github.com/sleiphir/nvim/compare/v1.9.0...v1.10.0) (2025-03-07)
 
 
