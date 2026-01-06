@@ -1,9 +1,12 @@
 return {
-	'stevearc/conform.nvim',
+	"stevearc/conform.nvim",
 	config = function()
 		require("conform").setup({
 			formatters_by_ft = {
-				go = { "gofumpt" },
+				lua = { "stylua" },
+				sql = { "sqlfmt" },
+				bash = { "shfmt" },
+				go = { "gofumpt", "goimports" },
 				html = { "biome", "prettier" },
 				yaml = { "prettier" },
 				json = { "jq" },
@@ -25,7 +28,7 @@ return {
 						"$FILENAME",
 					},
 					stdin = false,
-				}
+				},
 			},
 			format_on_save = {
 				lsp_fallback = true,
