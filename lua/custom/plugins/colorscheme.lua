@@ -21,8 +21,8 @@ return {
 		lazy = false,
 		priority = 1000,
 		init = function()
-			vim.o.background = "dark"
-			vim.cmd("colorscheme github_dark")
+			-- vim.o.background = "dark"
+			-- vim.cmd("colorscheme github_dark")
 		end
 	},
 	{
@@ -40,7 +40,8 @@ return {
 		lazy = false,
 		priority = 1000,
 		init = function()
-			-- vim.cmd("colorscheme carbonfox")
+			vim.o.background = "dark"
+			vim.cmd("colorscheme duskfox")
 		end
 	},
 	{
