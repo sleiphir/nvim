@@ -20,6 +20,7 @@ vim.api.nvim_create_autocmd("FileType", {
 	},
 	callback = function()
 		vim.treesitter.start()
+		vim.bo.syntax = "on"
 	end,
 })
 
