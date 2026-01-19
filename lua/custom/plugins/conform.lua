@@ -11,9 +11,13 @@ return {
 				yaml = { "prettier" },
 				json = { "jq" },
 				css = { "prettier" },
+				xml = { "xmlformatter" },
+				svg = { "xmlformatter" },
 				javascript = { "biome", "prettier" },
-				typescript = { "biome" },
-				["*"] = { "codespell", "trim_whitespace" },
+				javascriptreact = { "biome", "prettier" },
+				typescript = { "biome", "prettier" },
+				typescriptreact = { "biome", "prettier" },
+				["*"] = { "trim_whitespace" },
 			},
 			formatters = {
 				biome = {
