@@ -46,11 +46,12 @@ set("n", "<leader>dl", "mzyyp`zj")
 -- Start merge conflict resolution
 set("n", "<leader>gm", ":Git mergetool<CR>:only<CR>")
 
--- Diff get local
-set("n", "<leader>dgl", "/\\V======<CR>d<CR>dd/\\V>>>>>><CR>dd")
+-- Toggle vimdiff for side-by-side comparison
+set("n", "<leader>dd", ":if &diff | diffoff | only | else | Gvdiffsplit! | endif<CR>")
 
--- Diff get remote
-set("n", "<leader>dgr", "V/\\V======<CR>d<CR>dd/\\V>>>>>><CR>dd")
-
--- Diff get both
-set("n", "<leader>dgb", "dd/\\V======<CR>dd/\\V>>>>>><CR>dd")
+-- Git conflict resolution (choose local/remote/both)
+set("n", "<leader>dl", 'j?HEAD<CR>"_dd/\\V======<CR>V/\\V>>>>>><CR>"_dk')
+set("n", "<leader>dc", 'j?HEAD<CR>"_dd/\\V======<CR>V/\\V>>>>>><CR>"_dk')
+set("n", "<leader>dr", 'j?HEAD<CR>V/\\V======<CR>"_d/\\V>>>>>><CR>"_ddk')
+set("n", "<leader>di", 'j?HEAD<CR>V/\\V======<CR>"_d/\\V>>>>>><CR>"_ddk')
+set("n", "<leader>db", 'j?HEAD<CR>"_dd/\\V======<CR>"_dd/\\V>>>>>><CR>"_dd2k')
