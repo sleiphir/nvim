@@ -72,3 +72,16 @@ vim.api.nvim_create_autocmd("BufWritePost", {
 		end
 	end,
 })
+
+-- Disable LSP in fugitive buffers
+vim.api.nvim_create_autocmd("LspAttach", {
+	callback = function(args)
+		local client = vim.lsp.get_client_by_id(args.data.client_id)
+		local bufnr = args.buf
+		if vim.api.nvim_buf_get_name(bufnr):match("^fugitive://") then
+			if client then
+				vim.lsp.stop_client(client.id)
+			end
+		end
+	end,
+})
