@@ -41,4 +41,16 @@ set("n", "<Up>", "<C-w>k")
 set("n", "<Right>", "<C-w>l")
 
 -- Duplicate line
-set("n", "<leader>d", "mzyyp`zj")
+set("n", "<leader>dl", "mzyyp`zj")
+
+-- Start merge conflict resolution
+set("n", "<leader>gm", ":Git mergetool<CR>:only<CR>")
+
+-- Diff get local
+set("n", "<leader>dgl", "/\\V======<CR>d<CR>dd/\\V>>>>>><CR>dd")
+
+-- Diff get remote
+set("n", "<leader>dgr", "V/\\V======<CR>d<CR>dd/\\V>>>>>><CR>dd")
+
+-- Diff get both
+set("n", "<leader>dgb", "dd/\\V======<CR>dd/\\V>>>>>><CR>dd")
