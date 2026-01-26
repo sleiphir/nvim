@@ -1,5 +1,21 @@
 # Changelog
 
+## [1.12.0](https://github.com/sleiphir/nvim/compare/v1.11.0...v1.12.0) (2026-01-26)
+
+
+### Features
+
+* add git diff keymaps ([13fafde](https://github.com/sleiphir/nvim/commit/13fafde824e362d793fd9c4837324a88c43a31d1))
+* add merge conflict keybindings ([061ddf7](https://github.com/sleiphir/nvim/commit/061ddf7584eb0e877cf03147ec9a5404838d8ddb))
+* **conform:** add terraform fmt ([5ca4f0e](https://github.com/sleiphir/nvim/commit/5ca4f0ef5b9ce30344ee11af8fa7d78ea98207c6))
+* replace trouble plugin with vim.diagnostic ([ecfa9a3](https://github.com/sleiphir/nvim/commit/ecfa9a363acab1bb05a052652d14a6ecbcc1ee3a))
+
+
+### Bug Fixes
+
+* **conform:** use proper formatters and add jsx/tsx support ([e0c2406](https://github.com/sleiphir/nvim/commit/e0c24068b27b89964e61cbf7c0bb4823accfef24))
+* **fugitive:** disable lsp in diff buffers ([1b29559](https://github.com/sleiphir/nvim/commit/1b295597f4eb0567b2a80c8d04cd622d2fba38e7))
+
 ## [1.11.0](https://github.com/sleiphir/nvim/compare/v1.10.0...v1.11.0) (2026-01-06)
 
 
