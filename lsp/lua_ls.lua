@@ -46,6 +46,7 @@ vim.lsp.config("lua_ls", {
 					-- here.
 					-- '${3rd}/luv/library',
 					-- '${3rd}/busted/library',
+					"${3rd}/love2d/library",
 				},
 				-- Or pull in all of 'runtimepath'.
 				-- NOTE: this is a lot slower and will cause issues when working on
