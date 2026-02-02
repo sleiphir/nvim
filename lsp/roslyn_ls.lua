@@ -7,6 +7,7 @@
 -- replace `<platform>` with one of the following `linux-x64`, `osx-x64`, `win-x64`, `neutral` (for more info on the download location see https://github.com/dotnet/roslyn/issues/71474#issuecomment-2177303207).
 -- Download and extract it (nuget's are zip files).
 -- - if you chose `neutral` nuget version, then you have to change the `cmd` like so:
+--   ```lua
 --   cmd = {
 --     'dotnet',
 --     '<my_folder>/Microsoft.CodeAnalysis.LanguageServer.dll',
@@ -16,6 +17,7 @@
 --     fs.joinpath(uv.os_tmpdir(), 'roslyn_ls/logs'),
 --     '--stdio',
 --   },
+--   ```
 --   where `<my_folder>` has to be the folder you extracted the nuget package to.
 -- - for all other platforms put the extracted folder to neovim's PATH (`vim.env.PATH`)
 
@@ -48,8 +50,7 @@ end
 
 ---@param client vim.lsp.Client
 local function refresh_diagnostics(client)
-  local buffers = vim.lsp.get_buffers_by_client_id(client.id)
-  for _, buf in ipairs(buffers) do
+  for buf, _ in pairs(vim.lsp.get_client_by_id(client.id).attached_buffers) do
     if vim.api.nvim_buf_is_loaded(buf) then
       client:request(
         vim.lsp.protocol.Methods.textDocument_diagnostic,
@@ -97,6 +98,16 @@ local function roslyn_handlers()
   }
 end
 
+---@param bufname string
+---@return boolean
+local function is_decompiled(bufname)
+  local _, endpos = bufname:find('[/\\]MetadataAsSource[/\\]')
+  if endpos == nil then
+    return false
+  end
+  return vim.fn.finddir(bufname:sub(1, endpos), uv.os_tmpdir()) ~= ''
+end
+
 ---@type vim.lsp.Config
 return {
   name = 'roslyn_ls',
@@ -118,6 +129,7 @@ return {
       local args = command.arguments or {}
       local uri, edit = args[1], args[2]
 
+      ---@diagnostic disable: undefined-field
       if uri and edit and edit.newText and edit.range then
         local workspace_edit = {
           changes = {
@@ -130,6 +142,7 @@ return {
           },
         }
         vim.lsp.util.apply_workspace_edit(workspace_edit, client.offset_encoding)
+      ---@diagnostic enable: undefined-field
       else
         vim.notify('roslyn_ls: completionComplexEdit args not understood: ' .. vim.inspect(args), vim.log.levels.WARN)
       end
@@ -140,7 +153,7 @@ return {
     local bufname = vim.api.nvim_buf_get_name(bufnr)
     -- don't try to find sln or csproj for files from libraries
     -- outside of the project
-    if not bufname:match('^' .. fs.joinpath('/tmp/MetadataAsSource/')) then
+    if not is_decompiled(bufname) then
       -- try find solutions root first
       local root_dir = fs.root(bufnr, function(fname, _)
         return fname:match('%.sln[x]?$') ~= nil
@@ -155,6 +168,16 @@ return {
 
       if root_dir then
         cb(root_dir)
+      end
+    else
+      -- Decompiled code (example: "/tmp/MetadataAsSource/f2bfba/DecompilationMetadataAsSourceFileProvider/d5782a/Console.cs")
+      local prev_buf = vim.fn.bufnr('#')
+      local client = vim.lsp.get_clients({
+        name = 'roslyn_ls',
+        bufnr = prev_buf ~= 1 and prev_buf or nil,
+      })[1]
+      if client then
+        cb(client.config.root_dir)
       end
     end
   end,

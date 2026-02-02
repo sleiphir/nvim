@@ -33,6 +33,8 @@
 --- - organize imports
 --- - remove unused code
 ---
+--- Use the `:LspTypescriptGoToSourceDefinition` command to navigate to the source definition of a symbol (e.g., jump to the original implementation instead of type definitions).
+---
 --- ### Monorepo support
 ---
 --- `ts_ls` supports monorepos by default. It will automatically find the `tsconfig.json` or `jsconfig.json` corresponding to the package you are working on.
@@ -62,10 +64,14 @@ return {
     -- Give the root markers equal priority by wrapping them in a table
     root_markers = vim.fn.has('nvim-0.11.3') == 1 and { root_markers, { '.git' } }
       or vim.list_extend(root_markers, { '.git' })
+    -- exclude deno
+    local deno_path = vim.fs.root(bufnr, { 'deno.json', 'deno.jsonc', 'deno.lock' })
+    local project_root = vim.fs.root(bufnr, root_markers)
+    if deno_path and (not project_root or #deno_path >= #project_root) then
+      return
+    end
     -- We fallback to the current working directory if no project root is found
-    local project_root = vim.fs.root(bufnr, root_markers) or vim.fn.getcwd()
-
-    on_dir(project_root)
+    on_dir(project_root or vim.fn.getcwd())
   end,
   handlers = {
     -- handle rename request for certain code actions like extracting functions / types
@@ -87,7 +93,7 @@ return {
       local client = assert(vim.lsp.get_client_by_id(ctx.client_id))
       local file_uri, position, references = unpack(command.arguments)
 
-      local quickfix_items = vim.lsp.util.locations_to_items(references, client.offset_encoding)
+      local quickfix_items = vim.lsp.util.locations_to_items(references --[[@as any]], client.offset_encoding)
       vim.fn.setqflist({}, ' ', {
         title = command.title,
         items = quickfix_items,
@@ -98,12 +104,13 @@ return {
       })
 
       vim.lsp.util.show_document({
-        uri = file_uri,
+        uri = file_uri --[[@as string]],
         range = {
-          start = position,
-          ['end'] = position,
+          start = position --[[@as lsp.Position]],
+          ['end'] = position --[[@as lsp.Position]],
         },
       }, client.offset_encoding)
+      ---@diagnostic enable: assign-type-mismatch
 
       vim.cmd('botright copen')
     end,
@@ -119,8 +126,30 @@ return {
       vim.lsp.buf.code_action({
         context = {
           only = source_actions,
+          diagnostics = {},
         },
       })
     end, {})
+
+    -- Go to source definition command
+    vim.api.nvim_buf_create_user_command(bufnr, 'LspTypescriptGoToSourceDefinition', function()
+      local win = vim.api.nvim_get_current_win()
+      local params = vim.lsp.util.make_position_params(win, client.offset_encoding)
+      client:exec_cmd({
+        command = '_typescript.goToSourceDefinition',
+        title = 'Go to source definition',
+        arguments = { params.textDocument.uri, params.position },
+      }, { bufnr = bufnr }, function(err, result)
+        if err then
+          vim.notify('Go to source definition failed: ' .. err.message, vim.log.levels.ERROR)
+          return
+        end
+        if not result or vim.tbl_isempty(result) then
+          vim.notify('No source definition found', vim.log.levels.INFO)
+          return
+        end
+        vim.lsp.util.show_document(result[1], client.offset_encoding, { focus = true })
+      end)
+    end, { desc = 'Go to source definition' })
   end,
 }

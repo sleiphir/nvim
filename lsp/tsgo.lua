@@ -16,14 +16,19 @@
 
 ---@type vim.lsp.Config
 return {
-  cmd = { 'tsgo', '--lsp', '--stdio' },
+  cmd = function(dispatchers, config)
+    local cmd = 'tsgo'
+    local local_cmd = (config or {}).root_dir and config.root_dir .. '/node_modules/.bin/tsgo'
+    if local_cmd and vim.fn.executable(local_cmd) == 1 then
+      cmd = local_cmd
+    end
+    return vim.lsp.rpc.start({ cmd, '--lsp', '--stdio' }, dispatchers)
+  end,
   filetypes = {
     'javascript',
     'javascriptreact',
-    'javascript.jsx',
     'typescript',
     'typescriptreact',
-    'typescript.tsx',
   },
   root_dir = function(bufnr, on_dir)
     -- The project root is where the LSP can be started from
@@ -34,6 +39,12 @@ return {
     -- Give the root markers equal priority by wrapping them in a table
     root_markers = vim.fn.has('nvim-0.11.3') == 1 and { root_markers, { '.git' } }
       or vim.list_extend(root_markers, { '.git' })
+
+    -- exclude deno
+    if vim.fs.root(bufnr, { 'deno.json', 'deno.jsonc', 'deno.lock' }) then
+      return
+    end
+
     -- We fallback to the current working directory if no project root is found
     local project_root = vim.fs.root(bufnr, root_markers) or vim.fn.getcwd()
 

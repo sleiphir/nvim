@@ -7,17 +7,19 @@ return {
 				sql = { "sqlfmt" },
 				bash = { "shfmt" },
 				go = { "gofumpt", "goimports" },
-				html = { "biome", "prettier" },
-				yaml = { "prettier" },
-				json = { "jq" },
-				css = { "prettier" },
+				html = { "oxfmt" },
+				yaml = { "oxfmt" },
+				json = { "oxfmt" },
+				css = { "oxfmt" },
 				xml = { "xmlformatter" },
 				svg = { "xmlformatter" },
+				vue = { "oxfmt" },
+				markdown = { "oxfmt" },
 				terraform = { "tfmt" },
-				javascript = { "biome", "prettier" },
-				javascriptreact = { "biome", "prettier" },
-				typescript = { "biome", "prettier" },
-				typescriptreact = { "biome", "prettier" },
+				javascript = { "oxfmt" },
+				javascriptreact = { "oxfmt" },
+				typescript = { "oxfmt" },
+				typescriptreact = { "oxfmt" },
 				["*"] = { "trim_whitespace" },
 			},
 			formatters = {
@@ -29,24 +31,19 @@ return {
 					args = { "fmt", "$FILENAME" },
 					stdin = false,
 				},
-				biome = {
+				oxfmt = {
 					condition = function()
-						return vim.uv.fs_realpath("biome.json") ~= nil
+						return vim.uv.fs_realpath(".oxfmtrc.json") ~= nil
 					end,
-					command = "biome",
-					args = {
-						"check",
-						"--fix",
-						"--unsafe",
-						"$FILENAME",
-					},
+					command = "oxfmt",
+					args = "$FILENAME",
 					stdin = false,
 				},
 			},
 			format_on_save = {
-				lsp_fallback = true,
+				lsp_fallback = false,
 				async = false,
-				timeout_ms = 500,
+				timeout_ms = 250,
 			},
 		})
 
@@ -56,6 +53,18 @@ return {
 				lsp_fallback = true,
 				async = false,
 				timeout_ms = 1000,
+				formatting_options = {
+					formatters = {
+						oxfmt = {
+							condition = function()
+								return vim.uv.fs_realpath(".oxfmtrc.json") ~= nil
+							end,
+							command = "oxlint",
+							args = { "--fix-dangerously", "$FILENAME" },
+							stdin = false,
+						},
+					},
+				},
 			})
 		end, { desc = "Format file or range (in visual mode)" })
 	end,

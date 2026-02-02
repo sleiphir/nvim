@@ -34,7 +34,6 @@ return {
     'jsonc',
     'svelte',
     'typescript',
-    'typescript.tsx',
     'typescriptreact',
     'vue',
   },
@@ -44,10 +43,18 @@ return {
     -- As stated in the documentation above, this LSP supports monorepos and simple projects.
     -- We select then from the project root, which is identified by the presence of a package
     -- manager lock file.
-    local root_markers = { 'package-lock.json', 'yarn.lock', 'pnpm-lock.yaml', 'bun.lockb', 'bun.lock' }
+    local root_markers = {
+      'package-lock.json',
+      'yarn.lock',
+      'pnpm-lock.yaml',
+      'bun.lockb',
+      'bun.lock',
+      'deno.lock',
+    }
     -- Give the root markers equal priority by wrapping them in a table
     root_markers = vim.fn.has('nvim-0.11.3') == 1 and { root_markers, { '.git' } }
       or vim.list_extend(root_markers, { '.git' })
+
     -- We fallback to the current working directory if no project root is found
     local project_root = vim.fs.root(bufnr, root_markers) or vim.fn.getcwd()
 
@@ -55,7 +62,7 @@ return {
     -- in its directory tree.
     local filename = vim.api.nvim_buf_get_name(bufnr)
     local biome_config_files = { 'biome.json', 'biome.jsonc' }
-    biome_config_files = util.insert_package_json(biome_config_files, 'biome', filename)
+    biome_config_files = util.insert_package_json(biome_config_files, 'biomejs', filename)
     local is_buffer_using_biome = vim.fs.find(biome_config_files, {
       path = filename,
       type = 'file',
