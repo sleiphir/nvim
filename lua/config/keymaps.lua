@@ -54,9 +54,7 @@ set("n", "<leader>gm", ":Git mergetool<CR>:only<CR>")
 -- Toggle vimdiff for side-by-side comparison
 set("n", "<leader>dd", ":if &diff | diffoff | only | else | Gvdiffsplit! | endif<CR>")
 
--- Git conflict resolution (choose local/remote/both)
+-- Git conflict resolution (choose local/incoming/both)
 set("n", "<leader>dl", 'j?HEAD<CR>"_dd/\\V======<CR>V/\\V>>>>>><CR>"_dk')
-set("n", "<leader>dc", 'j?HEAD<CR>"_dd/\\V======<CR>V/\\V>>>>>><CR>"_dk')
-set("n", "<leader>dr", 'j?HEAD<CR>V/\\V======<CR>"_d/\\V>>>>>><CR>"_ddk')
 set("n", "<leader>di", 'j?HEAD<CR>V/\\V======<CR>"_d/\\V>>>>>><CR>"_ddk')
 set("n", "<leader>db", 'j?HEAD<CR>"_dd/\\V======<CR>"_dd/\\V>>>>>><CR>"_dd2k')
