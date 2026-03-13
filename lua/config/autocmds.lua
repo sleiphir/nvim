@@ -24,6 +24,24 @@ vim.api.nvim_create_autocmd("FileType", {
 	end,
 })
 
+local background_group = vim.api.nvim_create_augroup("BackgroundSync", { clear = true })
+
+local function sync_background_colorscheme()
+	local colorscheme = vim.o.background == "light" and "dawnfox" or "duskfox"
+
+	if vim.g.colors_name == colorscheme then
+		return
+	end
+
+	vim.cmd.colorscheme(colorscheme)
+end
+
+vim.api.nvim_create_autocmd("OptionSet", {
+	group = background_group,
+	pattern = "background",
+	callback = sync_background_colorscheme,
+})
+
 -- Auto insert mode on TermOpen
 vim.api.nvim_create_autocmd({ "TermOpen", "BufEnter" }, {
 	pattern = { "*" },
