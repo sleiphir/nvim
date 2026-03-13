@@ -6,7 +6,7 @@ return {
 		priority = 1000,
 		config = function()
 			-- vim.cmd.colorscheme("zenwritten")
-		end
+		end,
 	},
 	{
 		"mellow-theme/mellow.nvim",
@@ -14,7 +14,7 @@ return {
 		priority = 1000,
 		init = function()
 			-- vim.cmd("colorscheme mellow")
-		end
+		end,
 	},
 	{
 		"projekt0n/github-nvim-theme",
@@ -23,7 +23,7 @@ return {
 		init = function()
 			-- vim.o.background = "dark"
 			-- vim.cmd("colorscheme github_dark")
-		end
+		end,
 	},
 	{
 		"morhetz/gruvbox",
@@ -32,7 +32,7 @@ return {
 		init = function()
 			-- vim.o.background = "light"
 			-- vim.cmd("colorscheme gruvbox")
-		end
+		end,
 	},
 	{
 		"EdenEast/nightfox.nvim",
@@ -40,9 +40,11 @@ return {
 		lazy = false,
 		priority = 1000,
 		init = function()
-			vim.o.background = "dark"
-			vim.cmd("colorscheme duskfox")
-		end
+			-- vim.o.background = "light"
+			-- vim.cmd("colorscheme dayfox")
+			-- vim.o.background = "dark"
+			-- vim.cmd("colorscheme duskfox")
+		end,
 	},
 	{
 		"shaunsingh/nord.nvim",
@@ -52,7 +54,7 @@ return {
 		config = function()
 			-- vim.o.background = "dark"
 			-- vim.cmd("colorscheme nord")
-		end
+		end,
 	},
 	{
 		"AlexvZyl/nordic.nvim",
@@ -62,7 +64,7 @@ return {
 		config = function()
 			-- vim.o.background = "dark"
 			-- vim.cmd("colorscheme nordic")
-		end
+		end,
 	},
 	{
 		"thesimonho/kanagawa-paper.nvim",
@@ -71,7 +73,7 @@ return {
 		config = function()
 			-- vim.o.background = "dark"
 			-- vim.cmd.colorscheme("kanagawa-paper")
-		end
+		end,
 	},
 	{
 		"Mofiqul/adwaita.nvim",
@@ -80,7 +82,7 @@ return {
 		config = function()
 			-- vim.o.background = "dark"
 			-- vim.cmd.colorscheme("adwaita")
-		end
+		end,
 	},
 	{
 		"HoNamDuong/hybrid.nvim",
@@ -89,7 +91,7 @@ return {
 		config = function()
 			-- vim.o.background = "dark"
 			-- vim.cmd.colorscheme("hybrid")
-		end
+		end,
 	},
 	{
 		"vague2k/vague.nvim",
@@ -102,7 +104,7 @@ return {
 			-- vim.api.nvim_set_hl(0, "IblScope", { fg = "#3f3f42" })
 			-- vim.api.nvim_set_hl(0, "IblIndent", { fg = "#2a2a2b" })
 			-- vim.o.cursorline = false
-		end
+		end,
 	},
 	{
 		"Shatur/neovim-ayu",
@@ -111,6 +113,6 @@ return {
 		config = function()
 			-- vim.o.background = "dark"
 			-- vim.cmd.colorscheme("ayu")
-		end
-	}
+		end,
+	},
 }
