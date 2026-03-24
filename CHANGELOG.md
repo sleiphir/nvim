@@ -1,5 +1,31 @@
 # Changelog
 
+## [2.0.0](https://github.com/sleiphir/nvim/compare/v1.11.0...v2.0.0) (2026-03-24)
+
+
+### ⚠ BREAKING CHANGES
+
+* **lsp:** actually use the root lsp/ folder and remove
+
+### Features
+
+* add git diff keymaps ([13fafde](https://github.com/sleiphir/nvim/commit/13fafde824e362d793fd9c4837324a88c43a31d1))
+* add merge conflict keybindings ([061ddf7](https://github.com/sleiphir/nvim/commit/061ddf7584eb0e877cf03147ec9a5404838d8ddb))
+* add opencode plugin and update plugins ([1b3094c](https://github.com/sleiphir/nvim/commit/1b3094c4c7836a7242b4db6cdd409daa2c8e8086))
+* add support for system light and dark mode switch ([5d090ea](https://github.com/sleiphir/nvim/commit/5d090eabed0d0ef1f7d35db2ece8cbb5d5a810a0))
+* **conform:** add terraform fmt ([5ca4f0e](https://github.com/sleiphir/nvim/commit/5ca4f0ef5b9ce30344ee11af8fa7d78ea98207c6))
+* **lua_ls:** enable love2d third party library ([4db3637](https://github.com/sleiphir/nvim/commit/4db3637929c7dba1243d21d501305d03f5d9c0a5))
+* replace trouble plugin with vim.diagnostic ([ecfa9a3](https://github.com/sleiphir/nvim/commit/ecfa9a363acab1bb05a052652d14a6ecbcc1ee3a))
+
+
+### Bug Fixes
+
+* **avante:** build command ([390cdfe](https://github.com/sleiphir/nvim/commit/390cdfe87545e5b5485064d618f720b2ee622074))
+* **conform:** use proper formatters and add jsx/tsx support ([e0c2406](https://github.com/sleiphir/nvim/commit/e0c24068b27b89964e61cbf7c0bb4823accfef24))
+* **fugitive:** disable lsp in diff buffers ([1b29559](https://github.com/sleiphir/nvim/commit/1b295597f4eb0567b2a80c8d04cd622d2fba38e7))
+* **lsp:** actually use the root lsp/ folder and remove ([a2e5555](https://github.com/sleiphir/nvim/commit/a2e5555c64d61c8ffa173298f582e8cfe32d9ea6))
+* **lsp:** disable ts_ls and tsgo ([678e094](https://github.com/sleiphir/nvim/commit/678e0947d96e96d7af80ce442e42247b4636df59))
+
 ## [1.11.0](https://github.com/sleiphir/nvim/compare/v1.10.0...v1.11.0) (2026-01-06)
 
 
