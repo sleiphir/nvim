@@ -27,7 +27,7 @@ vim.api.nvim_create_autocmd("FileType", {
 local background_group = vim.api.nvim_create_augroup("BackgroundSync", { clear = true })
 
 local function sync_background_colorscheme()
-	local colorscheme = vim.o.background == "light" and "dawnfox" or "duskfox"
+	local colorscheme = vim.o.background == "light" and "zenbones" or "zenbones"
 
 	if vim.g.colors_name == colorscheme then
 		return
