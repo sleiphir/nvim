@@ -1,10 +1,22 @@
-local lsp_zero = require("lsp-zero")
+-- Tell LSP servers about the completion capabilities provided by blink.cmp.
+-- Done before servers are enabled so every server picks it up via the '*' config.
+vim.lsp.config("*", {
+	capabilities = require("blink.cmp").get_lsp_capabilities(),
+})
 
--- Configure Vim diagnostic
+-- Configure Vim diagnostics
 vim.diagnostic.config({
 	virtual_text = true,
 	virtual_lines = false,
 	severity_sort = true,
+	signs = {
+		text = {
+			[vim.diagnostic.severity.ERROR] = "✘",
+			[vim.diagnostic.severity.WARN] = "▲",
+			[vim.diagnostic.severity.HINT] = "⚑",
+			[vim.diagnostic.severity.INFO] = "»",
+		},
+	},
 	float = {
 		style = "minimal",
 		border = "none",
@@ -14,49 +26,28 @@ vim.diagnostic.config({
 	},
 })
 
--- Lsp icons
-lsp_zero.ui({
-	float_border = "none",
-	sign_text = {
-		error = "✘",
-		warn = "▲",
-		hint = "⚑",
-		info = "",
-	},
+-- LSP keymaps (Neovim already provides grr/gri/grn/gra/K/[d/]d by default;
+-- these add the author's preferred shorter bindings on top).
+vim.api.nvim_create_autocmd("LspAttach", {
+	callback = function(args)
+		local opts = { buffer = args.buf, remap = false }
+		local set = vim.keymap.set
+
+		-- Disable inlay hints (virtual text for param/type names)
+		vim.lsp.inlay_hint.enable(false)
+
+		set("n", "gd", vim.lsp.buf.definition, opts)
+		set("n", "gi", vim.lsp.buf.implementation, opts)
+		set("n", "gr", vim.lsp.buf.references, opts)
+		set("n", "gt", vim.lsp.buf.type_definition, opts)
+		set("n", "g.", vim.lsp.buf.code_action, opts)
+		set("n", "K", vim.lsp.buf.hover, opts)
+		set("n", "[d", function()
+			vim.diagnostic.jump({ count = 1 })
+		end, opts)
+		set("n", "]d", function()
+			vim.diagnostic.jump({ count = -1 })
+		end, opts)
+		set("n", "<leader>rn", vim.lsp.buf.rename, opts)
+	end,
 })
-
--- Keybindings
-lsp_zero.on_attach(function(_, bufnr)
-	local opts = { buffer = bufnr, remap = false }
-	lsp_zero.default_keymaps({ buffer = bufnr })
-	-- Disable inlay hints (virtual text for variable types and name of function parameters)
-	vim.lsp.inlay_hint.enable(false)
-
-	vim.keymap.set("n", "gd", function()
-		vim.lsp.buf.definition()
-	end, opts)
-	vim.keymap.set("n", "gi", function()
-		vim.lsp.buf.implementation()
-	end, opts)
-	vim.keymap.set("n", "gr", function()
-		vim.lsp.buf.references()
-	end, opts)
-	vim.keymap.set("n", "gt", function()
-		vim.lsp.buf.type_definition()
-	end, opts)
-	vim.keymap.set("n", "g.", function()
-		vim.lsp.buf.code_action()
-	end, opts)
-	vim.keymap.set("n", "K", function()
-		vim.lsp.buf.hover()
-	end, opts)
-	vim.keymap.set("n", "[d", function()
-		vim.diagnostic.jump({ count = 1 })
-	end, opts)
-	vim.keymap.set("n", "]d", function()
-		vim.diagnostic.jump({ count = -1 })
-	end, opts)
-	vim.keymap.set("n", "<leader>rn", function()
-		vim.lsp.buf.rename()
-	end, opts)
-end)

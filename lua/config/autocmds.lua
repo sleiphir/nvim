@@ -1,26 +1,8 @@
+-- Start treesitter highlighting for any filetype that has a parser installed.
+-- pcall keeps it silent for filetypes without a parser.
 vim.api.nvim_create_autocmd("FileType", {
-	pattern = {
-		"c",
-		"go",
-		"gomod",
-		"gosum",
-		"html",
-		"javascript",
-		"javascriptreact",
-		"jsx",
-		"lua",
-		"markdown",
-		"python",
-		"toml",
-		"tsx",
-		"typescript",
-		"typescriptreact",
-		"vim",
-		"xml",
-		"yaml",
-	},
-	callback = function()
-		vim.treesitter.start()
+	callback = function(args)
+		pcall(vim.treesitter.start, args.buf)
 	end,
 })
 
@@ -40,16 +22,6 @@ vim.api.nvim_create_autocmd("OptionSet", {
 	group = background_group,
 	pattern = "background",
 	callback = sync_background_colorscheme,
-})
-
--- Auto insert mode on TermOpen
-vim.api.nvim_create_autocmd({ "TermOpen", "BufEnter" }, {
-	pattern = { "*" },
-	callback = function()
-		if vim.opt.buftype:get() == "terminal" then
-			vim.cmd(":startinsert")
-		end
-	end,
 })
 
 -- vim-bujo auto commit & push on save

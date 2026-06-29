@@ -40,9 +40,6 @@ set("n", "<Down>", "<C-w>j")
 set("n", "<Up>", "<C-w>k")
 set("n", "<Right>", "<C-w>l")
 
--- Duplicate line
-set("n", "<leader>dl", "mzyyp`zj")
-
 -- Add all diagnostics to quickfix list
 set("n", "<leader>xx", function()
 	vim.diagnostic.setqflist({ open = true })

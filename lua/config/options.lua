@@ -60,6 +60,3 @@ opt.listchars = "tab:  ,extends:›,precedes:‹,nbsp:·,trail:·"
 
 -- System wide clipboard
 opt.clipboard = "unnamedplus"
-
--- Use .editorconfig files
-vim.g.editorconfig = true
