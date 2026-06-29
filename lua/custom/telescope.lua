@@ -1,14 +1,28 @@
 local actions = require("telescope.actions")
+local telescope = require("telescope")
 
-require("telescope").setup {
+telescope.setup {
 	defaults = {
 		mappings = {
 			i = {
-				["<esc>"] = actions.close
+				["<esc>"] = actions.close,
 			},
 		},
-	}
+	},
+	extensions = {
+		fzf = {
+			fuzzy = true,
+			override_generic_sorter = true,
+			override_file_sorter = true,
+			case_mode = "smart_case",
+		},
+	},
 }
+
+-- fzf-native is compiled (build = "make") but only takes effect once loaded.
+telescope.load_extension("fzf")
+-- Route vim.ui.select through Telescope (replaces dressing.nvim).
+telescope.load_extension("ui-select")
 
 local builtin = require "telescope.builtin"
 local set = vim.keymap.set
