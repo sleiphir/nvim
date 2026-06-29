@@ -26,8 +26,6 @@ vim.diagnostic.config({
 	},
 })
 
--- LSP keymaps (Neovim already provides grr/gri/grn/gra/K/[d/]d by default;
--- these add the author's preferred shorter bindings on top).
 vim.api.nvim_create_autocmd("LspAttach", {
 	callback = function(args)
 		local opts = { buffer = args.buf, remap = false }
