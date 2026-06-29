@@ -1,5 +1,5 @@
 local cmp = require("cmp")
-local lspkind = require "lspkind"
+local lspkind = require("lspkind")
 require("custom.snippets")
 
 cmp.setup({
@@ -13,7 +13,7 @@ cmp.setup({
 		["<C-u>"] = cmp.mapping.scroll_docs(-4),
 		["<C-d>"] = cmp.mapping.scroll_docs(4),
 		["<C-e>"] = cmp.mapping.abort(),
-		['<C-g>'] = function()
+		["<C-g>"] = function()
 			if cmp.visible_docs() then
 				cmp.close_docs()
 			else
@@ -35,16 +35,16 @@ cmp.setup({
 		{ name = "nvim_lsp" },
 		{ name = "path" },
 		{ name = "luasnip" },
-		{ name = "buffer",  group_index = 10 },
-		{ name = "lazydev", group_index = 0, }
+		{ name = "buffer", group_index = 10 },
+		{ name = "lazydev", group_index = 0 },
 	}),
 	formatting = {
 		expandable_indicator = true,
 		fields = { "kind", "abbr", "menu" },
 		format = lspkind.cmp_format({
-			mode = 'symbol_text',
+			mode = "symbol_text",
 			maxwidth = 50,
-			ellipsis_char = '...',
+			ellipsis_char = "...",
 			show_labelDetails = true,
 			before = function(entry, vim_item)
 				vim_item.menu = ({
@@ -55,7 +55,7 @@ cmp.setup({
 					lazydev = "[Lazy]",
 				})[entry.source.name]
 				return vim_item
-			end
-		})
-	}
+			end,
+		}),
+	},
 })

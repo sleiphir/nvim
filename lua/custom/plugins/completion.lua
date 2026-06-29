@@ -10,6 +10,6 @@ return {
 		"saadparwaiz1/cmp_luasnip",
 	},
 	config = function()
-		require "custom.completion"
+		require("custom.completion")
 	end,
 }

@@ -43,7 +43,7 @@ return {
 			format_on_save = {
 				lsp_fallback = false,
 				async = false,
-				timeout_ms = 500,
+				timeout_ms = 2000,
 			},
 		})
 
@@ -52,7 +52,7 @@ return {
 			require("conform").format({
 				lsp_fallback = true,
 				async = false,
-				timeout_ms = 1000,
+				timeout_ms = 2000,
 				formatting_options = {
 					formatters = {
 						oxfmt = {

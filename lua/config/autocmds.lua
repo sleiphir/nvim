@@ -1,9 +1,12 @@
--- Enable Tree-Sitter
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = {
 		"c",
+		"go",
+		"gomod",
+		"gosum",
 		"html",
 		"javascript",
+		"javascriptreact",
 		"jsx",
 		"lua",
 		"markdown",
@@ -11,23 +14,20 @@ vim.api.nvim_create_autocmd("FileType", {
 		"toml",
 		"tsx",
 		"typescript",
+		"typescriptreact",
 		"vim",
 		"xml",
 		"yaml",
-		"go",
-		"gomod",
-		"gosum",
 	},
 	callback = function()
 		vim.treesitter.start()
-		vim.bo.syntax = "on"
 	end,
 })
 
 local background_group = vim.api.nvim_create_augroup("BackgroundSync", { clear = true })
 
 local function sync_background_colorscheme()
-	local colorscheme = vim.o.background == "light" and "dawnfox" or "duskfox"
+	local colorscheme = vim.o.background == "light" and "github_light_default" or "vague"
 
 	if vim.g.colors_name == colorscheme then
 		return
@@ -88,7 +88,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		local bufnr = args.buf
 		if vim.api.nvim_buf_get_name(bufnr):match("^fugitive://") then
 			if client then
-				vim.lsp.stop_client(client.id)
+				client:stop()
 			end
 		end
 	end,

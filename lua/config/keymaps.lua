@@ -31,8 +31,8 @@ set({ "n", "v" }, "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
 -- Move lines around in visual mode
-set("v", "J", ":m '>+1<CR>gv=gv")
-set("v", "K", ":m '<-2<CR>gv=gv")
+-- set("v", "J", ":m '>+1<CR>gv=gv")
+-- set("v", "K", ":m '<-2<CR>gv=gv")
 
 -- Move between windows with actual arrow keys
 set("n", "<Left>", "<C-w>h")
