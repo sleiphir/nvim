@@ -38,9 +38,6 @@ opt.smartcase = true
 opt.splitbelow = true
 opt.splitright = true
 
--- prevent comment insertion when pressing 'o' on a commented line
-opt.formatoptions:remove "o"
-
 -- Undo settings
 opt.swapfile = false
 opt.backup = false

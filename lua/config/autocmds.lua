@@ -3,6 +3,9 @@
 vim.api.nvim_create_autocmd("FileType", {
 	callback = function(args)
 		pcall(vim.treesitter.start, args.buf)
+		-- ftplugins reset formatoptions per buffer, so disable the 'o' (auto
+		-- comment leader on o/O) flag here rather than globally in options.lua.
+		vim.opt_local.formatoptions:remove("o")
 	end,
 })
 
@@ -53,15 +56,13 @@ vim.api.nvim_create_autocmd("BufWritePost", {
 	end,
 })
 
--- Disable LSP in fugitive buffers
+-- Disable LSP in fugitive buffers. Detach just this buffer rather than
+-- stopping the client, which would kill LSP for every other buffer too.
 vim.api.nvim_create_autocmd("LspAttach", {
 	callback = function(args)
-		local client = vim.lsp.get_client_by_id(args.data.client_id)
 		local bufnr = args.buf
 		if vim.api.nvim_buf_get_name(bufnr):match("^fugitive://") then
-			if client then
-				client:stop()
-			end
+			vim.lsp.buf_detach_client(bufnr, args.data.client_id)
 		end
 	end,
 })
