@@ -6,8 +6,8 @@ return {
 		"saghen/blink.cmp", -- needed for get_lsp_capabilities() in custom.lsp.config
 	},
 	opts = {
-		-- Let mason-lspconfig vim.lsp.enable() installed servers automatically,
-		-- except the ones we configure by hand elsewhere.
+		-- Auto-enable every Mason-installed server, except these which are
+		-- installed but intentionally kept disabled.
 		automatic_enable = {
 			exclude = { "tsgo", "vtsls" },
 		},
