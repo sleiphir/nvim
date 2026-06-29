@@ -53,18 +53,6 @@ return {
 				lsp_fallback = true,
 				async = false,
 				timeout_ms = 2000,
-				formatting_options = {
-					formatters = {
-						oxfmt = {
-							condition = function()
-								return vim.uv.fs_realpath(".oxfmtrc.json") ~= nil
-							end,
-							command = "oxlint",
-							args = { "--fix-dangerously", "$FILENAME" },
-							stdin = false,
-						},
-					},
-				},
 			})
 		end, { desc = "Format file or range (in visual mode)" })
 	end,
