@@ -1,5 +1,38 @@
 # Changelog
 
+## [2.0.0](https://github.com/sleiphir/nvim/compare/v1.11.0...v2.0.0) (2026-09-21)
+
+
+### ⚠ BREAKING CHANGES
+
+* **lsp:** actually use the root lsp/ folder and remove
+
+### Features
+
+* add git diff keymaps ([13fafde](https://github.com/sleiphir/nvim/commit/13fafde824e362d793fd9c4837324a88c43a31d1))
+* add merge conflict keybindings ([061ddf7](https://github.com/sleiphir/nvim/commit/061ddf7584eb0e877cf03147ec9a5404838d8ddb))
+* add opencode plugin and update plugins ([1b3094c](https://github.com/sleiphir/nvim/commit/1b3094c4c7836a7242b4db6cdd409daa2c8e8086))
+* add support for system light and dark mode switch ([5d090ea](https://github.com/sleiphir/nvim/commit/5d090eabed0d0ef1f7d35db2ece8cbb5d5a810a0))
+* **colorscheme:** switch light theme to melange ([406dac3](https://github.com/sleiphir/nvim/commit/406dac36b650da02e8f0beeac395143f8e79c7b8))
+* **conform:** add terraform fmt ([5ca4f0e](https://github.com/sleiphir/nvim/commit/5ca4f0ef5b9ce30344ee11af8fa7d78ea98207c6))
+* **debug:** add DAP tooling and indent guides ([3752df9](https://github.com/sleiphir/nvim/commit/3752df91de316ca102c7878c5685e6f5e32a951c))
+* **lua_ls:** enable love2d third party library ([4db3637](https://github.com/sleiphir/nvim/commit/4db3637929c7dba1243d21d501305d03f5d9c0a5))
+* replace trouble plugin with vim.diagnostic ([ecfa9a3](https://github.com/sleiphir/nvim/commit/ecfa9a363acab1bb05a052652d14a6ecbcc1ee3a))
+* **telescope:** add ui-select dependency ([9b37246](https://github.com/sleiphir/nvim/commit/9b37246e033fe392db8f7f71ffad27c9d2d2ad53))
+* **workflow:** refine git hunks and Go snippets ([f8683ee](https://github.com/sleiphir/nvim/commit/f8683eedd4914d7d0298d8679acb1933e1197c24))
+
+
+### Bug Fixes
+
+* **avante:** build command ([390cdfe](https://github.com/sleiphir/nvim/commit/390cdfe87545e5b5485064d618f720b2ee622074))
+* **conform:** use proper formatters and add jsx/tsx support ([e0c2406](https://github.com/sleiphir/nvim/commit/e0c24068b27b89964e61cbf7c0bb4823accfef24))
+* **fugitive:** disable lsp in diff buffers ([1b29559](https://github.com/sleiphir/nvim/commit/1b295597f4eb0567b2a80c8d04cd622d2fba38e7))
+* **lsp:** actually use the root lsp/ folder and remove ([a2e5555](https://github.com/sleiphir/nvim/commit/a2e5555c64d61c8ffa173298f582e8cfe32d9ea6))
+* **lsp:** disable ts_ls and tsgo ([678e094](https://github.com/sleiphir/nvim/commit/678e0947d96e96d7af80ce442e42247b4636df59))
+* move 'o' flag removal to FileType autocmd ([bbea34e](https://github.com/sleiphir/nvim/commit/bbea34e96a47d2c8649399c12a86dcba1e3db6d1))
+* some config options ([6c85959](https://github.com/sleiphir/nvim/commit/6c8595916041e65ffb035154d06900876df789ad))
+* **telescope:** actually enable fzf ([6ff4f44](https://github.com/sleiphir/nvim/commit/6ff4f448477023f9eda308a0231fafa41e0feb5d))
+
 ## [1.11.0](https://github.com/sleiphir/nvim/compare/v1.10.0...v1.11.0) (2026-01-06)
 
 
