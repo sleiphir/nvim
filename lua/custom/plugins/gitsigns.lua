@@ -23,9 +23,9 @@ return {
 	keys = {
 		{ "[h", "<cmd>Gitsigns next_hunk<CR>", desc = "Next Hunk" },
 		{ "]h", "<cmd>Gitsigns prev_hunk<CR>", desc = "Prev Hunk" },
-		{ "<leader>gr", "<cmd>Gitsigns reset_hunk<CR>", desc = "Reset Hunk" },
-		{ "<leader>gR", "<cmd>Gitsigns reset_buffer<CR>", desc = "Reset Buffer" },
-		{ "<leader>gp", "<cmd>Gitsigns preview_hunk<CR>", desc = "Preview Hunk" },
+		{ "<leader>ghr", "<cmd>Gitsigns reset_hunk<CR>", desc = "Reset Hunk" },
+		{ "<leader>ghR", "<cmd>Gitsigns reset_buffer<CR>", desc = "Reset Buffer" },
+		{ "<leader>ghp", "<cmd>Gitsigns preview_hunk<CR>", desc = "Preview Hunk" },
 		{
 			"<leader>gb",
 			function()
