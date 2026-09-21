@@ -12,7 +12,7 @@ vim.api.nvim_create_autocmd("FileType", {
 local background_group = vim.api.nvim_create_augroup("BackgroundSync", { clear = true })
 
 local function sync_background_colorscheme()
-	local colorscheme = vim.o.background == "light" and "github_light_default" or "vague"
+	local colorscheme = vim.o.background == "light" and "melange" or "vague"
 
 	if vim.g.colors_name == colorscheme then
 		return

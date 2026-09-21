@@ -24,4 +24,4 @@ require("lazy").setup({ import = "custom/plugins" }, {
 
 -- Apply a colorscheme at startup; the BackgroundSync autocmd swaps it
 -- automatically when the (system) background changes afterwards.
-vim.cmd.colorscheme(vim.o.background == "light" and "github_light_default" or "vague")
+vim.cmd.colorscheme(vim.o.background == "light" and "melange" or "vague")
