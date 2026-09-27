@@ -7,17 +7,17 @@ return {
 				sql = { "sqlfmt" },
 				bash = { "shfmt" },
 				go = { "gofumpt", "goimports" },
-				html = { "oxfmt" },
+				html = { "oxfmt", "prettierd" },
 				yaml = { "oxfmt" },
 				json = { "oxfmt" },
-				css = { "oxfmt" },
+				css = { "oxfmt", "prettierd" },
 				xml = { "xmlformatter" },
 				svg = { "xmlformatter" },
 				vue = { "oxfmt" },
 				markdown = { "oxfmt" },
 				terraform = { "tfmt" },
-				javascript = { "oxfmt" },
-				javascriptreact = { "oxfmt" },
+				javascript = { "oxfmt", "prettierd" },
+				javascriptreact = { "oxfmt", "prettierd" },
 				typescript = { "oxfmt" },
 				typescriptreact = { "oxfmt" },
 				["*"] = { "trim_whitespace" },
@@ -38,6 +38,11 @@ return {
 					command = "oxfmt",
 					args = { "$FILENAME" },
 					stdin = false,
+				},
+				prettierd = {
+					condition = function()
+						return vim.uv.fs_realpath(".oxfmtrc.json") == nil
+					end,
 				},
 			},
 			format_on_save = {
